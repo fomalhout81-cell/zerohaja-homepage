@@ -2,14 +2,69 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
+<base href="/">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>제로하자 ZEROHAJA — 건축물 하자 사전점검 전문업체</title>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="shortcut icon" href="/favicon.svg">
+<title>제로하자 - 사전점검 전문업체</title>
 <meta name="description" content="제로하자는 건축 전문가가 직접 점검하는 신뢰할 수 있는 사전점검 서비스입니다. 10,000+ 세대 점검 실적, 99.9% 중대하자 적출률.">
+<link rel="canonical" href="https://zerohaza.co.kr/">
+<link rel="preload" as="image" href="images/hero-bg-mobile.webp" type="image/webp" media="(max-width: 768px)" fetchpriority="high">
+<link rel="preload" as="image" href="images/hero-bg.webp" type="image/webp" media="(min-width: 769px)" fetchpriority="high">
+<link rel="preload" as="image" href="logo_w.png" fetchpriority="high">
+<meta name="google-site-verification" content="flEaNMNX6yoySM917PXif-n1u468de7SQIeL6zNZ2RY" />
+<meta name="naver-site-verification" content="0c83b67190f8132a147d0c3a0db3169e28a6ba69" />
 
-<!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;700&family=Noto+Sans+KR:wght@300;400;500;700&family=Playfair+Display:wght@400;700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
-<!-- Font Awesome -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="제로하자">
+<meta property="og:title" content="제로하자 - 아파트 사전점검 전문업체">
+<meta property="og:description" content="건축 전문가가 직접 점검하는 신뢰할 수 있는 사전점검 서비스. 10,000+ 세대 점검 실적, 99.9% 중대하자 적출률.">
+<meta property="og:url" content="https://zerohaza.co.kr/">
+<meta property="og:image" content="https://zerohaza.co.kr/logo.png">
+<meta property="og:image:width" content="800">
+<meta property="og:image:height" content="400">
+<meta property="og:locale" content="ko_KR">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="제로하자 - 아파트 사전점검 전문업체">
+<meta name="twitter:description" content="건축 전문가가 직접 점검하는 신뢰할 수 있는 사전점검 서비스. 10,000+ 세대 점검 실적.">
+<meta name="twitter:image" content="https://zerohaza.co.kr/logo.png">
+
+<!-- GmarketSans 자체 호스팅 -->
+<link rel="preload" href="font/GmarketSansTTFBold.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="font/GmarketSansTTFMedium.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="font/GmarketSansTTFLight.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face {
+  font-family: 'GmarketSans';
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+  src: url('font/GmarketSansTTFLight.woff2') format('woff2'),
+       url('font/GmarketSansTTFLight.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'GmarketSans';
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+  src: url('font/GmarketSansTTFMedium.woff2') format('woff2'),
+       url('font/GmarketSansTTFMedium.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'GmarketSans';
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  src: url('font/GmarketSansTTFBold.woff2') format('woff2'),
+       url('font/GmarketSansTTFBold.ttf') format('truetype');
+}
+</style>
+<!-- Font Awesome 자체 호스팅 (font-display:swap 적용, 렌더블로킹 없음) -->
+<link rel="preload" href="/fa/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="/fa/css/all.min.css"></noscript>
 
 <style>
 /* ========================================
@@ -35,10 +90,10 @@
   --green: #22C55E;
   --red: #EF4444;
 
-  --font-serif-kr: 'Noto Serif KR', serif;
-  --font-sans-kr: 'Noto Sans KR', sans-serif;
-  --font-serif-en: 'Playfair Display', serif;
-  --font-sans-en: 'Montserrat', sans-serif;
+  --font-serif-kr: 'GmarketSans', sans-serif;
+  --font-sans-kr: 'GmarketSans', sans-serif;
+  --font-serif-en: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-sans-en: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 
   --max-width: 1200px;
   --header-height: 80px;
@@ -55,6 +110,7 @@ body {
   line-height: 1.7;
   background: var(--white);
   overflow-x: hidden;
+  word-break: keep-all;
 }
 
 img {
@@ -142,44 +198,18 @@ ul, ol {
 /* 로고 */
 .logo {
   display: flex;
-  flex-direction: column;
-  gap: 0;
   cursor: pointer;
 }
 
-.logo-main {
-  font-family: var(--font-sans-en);
-  font-size: 24px;
-  font-weight: 600;
-  letter-spacing: 3px;
-  line-height: 1.1;
-  transition: color var(--transition);
+.logo-img {
+  height: 38px;
+  width: auto;
+  display: block;
 }
 
-.logo-main .zero {
-  color: var(--white);
-  transition: color var(--transition);
-}
-
-.logo-main .haja {
-  color: var(--gold);
-}
-
-.header.scrolled .logo-main .zero {
-  color: var(--deep-navy);
-}
-
-.logo-sub {
-  font-size: 10px;
-  font-weight: 400;
-  letter-spacing: 1px;
-  color: rgba(255,255,255,0.6);
-  transition: color var(--transition);
-}
-
-.header.scrolled .logo-sub {
-  color: var(--mid-gray);
-}
+.logo-scrolled { display: none; }
+.header.scrolled .logo-default { display: none; }
+.header.scrolled .logo-scrolled { display: block; }
 
 /* 네비게이션 */
 .nav {
@@ -195,13 +225,14 @@ ul, ol {
 
 .nav-link {
   font-family: var(--font-sans-kr);
-  font-size: 15px;
-  font-weight: 500;
+  font-size: 17px;
+  font-weight: 600;
   color: var(--white);
   cursor: pointer;
   position: relative;
   padding: 4px 0;
   transition: color var(--transition);
+  text-shadow: 0 1px 6px rgba(0,0,0,0.7), 0 0 2px rgba(0,0,0,0.4);
 }
 
 .nav-link::after {
@@ -222,6 +253,7 @@ ul, ol {
 
 .header.scrolled .nav-link {
   color: var(--deep-navy);
+  text-shadow: none;
 }
 
 .nav-link:hover {
@@ -252,6 +284,23 @@ ul, ol {
 
 .btn-cta-gold:hover {
   background: var(--gold-light);
+}
+
+.btn-cta-ghost {
+  background: transparent;
+  color: var(--white);
+  border: 1.5px solid rgba(255,255,255,0.5);
+}
+.btn-cta-ghost:hover {
+  border-color: var(--white);
+  background: rgba(255,255,255,0.08);
+}
+.header.scrolled .btn-cta-ghost {
+  color: var(--deep-navy);
+  border-color: var(--deep-navy);
+}
+.header.scrolled .btn-cta-ghost:hover {
+  background: rgba(13,27,42,0.06);
 }
 
 /* 햄버거 메뉴 */
@@ -381,11 +430,19 @@ ul, ol {
 .hero-bg {
   position: absolute;
   inset: 0;
-  background: url('https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=1600') center/cover no-repeat;
+  overflow: hidden;
   filter: brightness(0.45);
   z-index: 0;
   transform: scale(1.05);
   animation: heroZoom 20s ease-in-out infinite alternate;
+}
+.hero-bg img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 @keyframes heroZoom {
@@ -774,7 +831,9 @@ ul, ol {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 24px;
+  align-items: stretch;
 }
+.equipment-grid > a { display: flex; }
 
 .equipment-card {
   background: var(--navy-mid);
@@ -782,6 +841,9 @@ ul, ol {
   border-radius: 8px;
   overflow: hidden;
   transition: all 0.4s ease;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .equipment-card:hover {
@@ -793,8 +855,10 @@ ul, ol {
 .equipment-card-img {
   width: 100%;
   height: 200px;
-  object-fit: cover;
-  opacity: 0.8;
+  object-fit: contain;
+  background: #0a1628;
+  padding: 16px;
+  opacity: 0.85;
   transition: opacity 0.4s ease;
 }
 
@@ -845,32 +909,109 @@ ul, ol {
 
 .partners-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
   margin-bottom: 40px;
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.partner-slot {
-  height: 100px;
+/* 플립 카드 */
+.partner-card {
+  height: 420px;
+  perspective: 1200px;
+  cursor: pointer;
+}
+
+.partner-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.65s cubic-bezier(0.4, 0.2, 0.2, 1);
+  transform-style: preserve-3d;
+}
+
+.partner-card.flipped .partner-card-inner {
+  transform: rotateY(180deg);
+}
+
+.partner-card-front,
+.partner-card-back {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.partner-card-front {
   background: var(--white);
   border: 1px solid var(--border);
-  border-radius: 8px;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-family: var(--font-sans-en);
-  font-size: 14px;
-  font-weight: 600;
-  color: #ccc;
-  letter-spacing: 1px;
-  transition: all 0.4s ease;
-  cursor: default;
+  gap: 16px;
+  transition: border-color 0.3s, box-shadow 0.3s;
 }
 
-.partner-slot:hover {
+.partner-card:hover .partner-card-front {
   border-color: var(--gold);
+  box-shadow: 0 6px 24px rgba(201, 168, 76, 0.18);
+}
+
+.partner-card-hint {
+  font-size: 11px;
+  color: #bbb;
+  letter-spacing: 0.5px;
+}
+
+.partner-card:hover .partner-card-hint {
   color: var(--gold);
-  box-shadow: 0 4px 15px rgba(201, 168, 76, 0.15);
+}
+
+.partner-card-back {
+  background: var(--deep-navy);
+  color: white;
+  transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+}
+
+.partner-card-back-photo {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.partner-card-back-body {
+  padding: 14px 20px 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+}
+
+.partner-card-back-body p {
+  font-size: 12px;
+  line-height: 1.8;
+  color: rgba(255,255,255,0.85);
+  margin: 0;
+  text-align: justify;
+}
+
+.partner-card-close {
+  font-size: 11px;
+  color: rgba(255,255,255,0.45);
+  position: absolute;
+  bottom: 10px;
+  right: 18px;
+  text-align: right;
 }
 
 .partners-footer {
@@ -951,6 +1092,34 @@ ul, ol {
   border-radius: 8px;
   box-shadow: 0 20px 50px rgba(0,0,0,0.1);
 }
+.guide-slideshow {
+  position: relative;
+  width: 100%;
+  height: 460px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+}
+.guide-slideshow .slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+.guide-slideshow .slide.active {
+  opacity: 1;
+}
+.guide-slideshow .slide-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(10,20,40,0.22);
+  pointer-events: none;
+  z-index: 1;
+  border-radius: 8px;
+}
 
 .guide-features {
   display: grid;
@@ -986,6 +1155,22 @@ ul, ol {
    ======================================== */
 .categories-section {
   background: var(--off-white);
+  position: relative;
+  overflow: hidden;
+}
+.categories-section .section-video-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.30;
+  pointer-events: none;
+  z-index: 0;
+}
+.categories-section .container {
+  position: relative;
+  z-index: 1;
 }
 
 .categories-header {
@@ -1068,6 +1253,184 @@ ul, ol {
 .checklist-item i {
   color: var(--gold);
   font-size: 16px;
+}
+
+/* ========================================
+   사전점검 — 주요 하자 유형
+   ======================================== */
+.defect-gallery-section {
+  background: var(--deep-navy);
+}
+
+.defect-gallery-header {
+  text-align: center;
+  margin-bottom: 56px;
+}
+
+.defect-gallery-header .section-subtitle { color: var(--gold); }
+.defect-gallery-header .section-title { color: var(--white); }
+.defect-gallery-header .section-desc { color: rgba(255,255,255,0.55); max-width: 520px; margin: 0 auto; }
+
+.defect-group {
+  margin-bottom: 60px;
+}
+.defect-group:last-child { margin-bottom: 0; }
+
+.defect-group-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.defect-group-badge {
+  display: inline-block;
+  padding: 4px 14px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+}
+.defect-group-badge.minor {
+  background: rgba(201,168,76,0.15);
+  color: var(--gold);
+  border: 1px solid rgba(201,168,76,0.35);
+}
+.defect-group-badge.major {
+  background: rgba(239,68,68,0.12);
+  color: #f87171;
+  border: 1px solid rgba(239,68,68,0.25);
+}
+
+.defect-group-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--white);
+}
+
+.defect-group-desc {
+  font-size: 13px;
+  color: rgba(255,255,255,0.45);
+  margin-top: 4px;
+}
+
+/* 피처드 + 서브 2×2 */
+.defect-hero {
+  display: grid;
+  grid-template-columns: 1.45fr 1fr;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.defect-photo {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  background: #111;
+}
+
+.defect-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease, opacity 0.18s ease;
+}
+
+.defect-photo:not(.featured):hover::after {
+  content: '↑';
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  width: 24px;
+  height: 24px;
+  background: rgba(201,168,76,0.9);
+  color: #fff;
+  border-radius: 50%;
+  font-size: 13px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 24px;
+  text-align: center;
+}
+
+.defect-photo:hover img { transform: scale(1.04); }
+
+.defect-photo-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.72) 0%, transparent 55%);
+  display: flex;
+  align-items: flex-end;
+  padding: 14px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.defect-photo:hover .defect-photo-overlay,
+.defect-photo.featured .defect-photo-overlay {
+  opacity: 1;
+}
+
+.defect-photo-label {
+  color: #fff;
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 1.3;
+}
+
+.defect-photo.featured {
+  aspect-ratio: 4/3;
+}
+
+.defect-photo.featured .defect-photo-label {
+  font-size: 16px;
+}
+
+.defect-sub-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 8px;
+}
+
+.defect-sub-grid .defect-photo {
+  aspect-ratio: 1;
+}
+
+/* 나머지 사진 그리드 */
+.defect-rest-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+}
+
+.defect-rest-grid .defect-photo {
+  aspect-ratio: 1;
+}
+
+/* 모바일 */
+@media (max-width: 768px) {
+  .defect-hero {
+    grid-template-columns: 1fr;
+  }
+  .defect-photo.featured { aspect-ratio: 3/2; }
+  .defect-sub-grid {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr;
+  }
+  .defect-sub-grid .defect-photo { aspect-ratio: 1; }
+  .defect-rest-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .defect-rest-grid > .defect-photo:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+  }
 }
 
 /* ========================================
@@ -1353,6 +1716,95 @@ ul, ol {
 }
 
 /* ========================================
+   고객후기 (Reviews)
+   ======================================== */
+.review-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.review-card {
+  background: var(--white);
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+}
+.review-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.1);
+  border-color: var(--gold);
+}
+.review-card-thumb {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+.review-card-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+.review-card:hover .review-card-thumb img {
+  transform: scale(1.05);
+}
+.review-card-body {
+  padding: 20px 24px;
+  flex: 1;
+}
+.review-tag {
+  display: inline-block;
+  font-size: 12px;
+  color: var(--gold);
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.review-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--deep-navy);
+  line-height: 1.5;
+  margin-bottom: 8px;
+}
+.review-comment {
+  font-size: 13px;
+  color: var(--mid-gray);
+  font-style: italic;
+  line-height: 1.5;
+}
+.review-card-footer {
+  padding: 14px 24px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.review-source {
+  font-size: 12px;
+  color: #03C75A;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.review-more {
+  font-size: 12px;
+  color: var(--gold);
+  font-weight: 600;
+}
+@media (max-width: 768px) {
+  .review-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 480px) {
+  .review-grid { grid-template-columns: 1fr; }
+}
+
+/* ========================================
    고객지원 — 상담 신청 (Consultation)
    ======================================== */
 .consultation-section {
@@ -1453,6 +1905,71 @@ ul, ol {
   cursor: not-allowed;
 }
 
+/* 상담신청 완료 모달 */
+.submit-modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 9999;
+  align-items: center;
+  justify-content: center;
+}
+.submit-modal-overlay.active {
+  display: flex;
+}
+.submit-modal-box {
+  background: #fff;
+  border-radius: 16px;
+  padding: 48px 40px;
+  text-align: center;
+  max-width: 380px;
+  width: 90%;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.18);
+  animation: modalPop 0.25s ease;
+}
+@keyframes modalPop {
+  from { opacity:0; transform: scale(0.9); }
+  to   { opacity:1; transform: scale(1); }
+}
+.submit-modal-icon {
+  width: 64px;
+  height: 64px;
+  background: #2A7172;
+  color: #fff;
+  border-radius: 50%;
+  font-size: 32px;
+  line-height: 64px;
+  margin: 0 auto 20px;
+}
+.submit-modal-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #1a2a3a;
+  margin: 0 0 12px;
+}
+.submit-modal-desc {
+  font-size: 15px;
+  color: #666;
+  line-height: 1.7;
+  margin: 0 0 28px;
+}
+.submit-modal-btn {
+  width: 100%;
+  padding: 14px;
+  background: #2A7172;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.submit-modal-btn:hover {
+  background: #1a4a4a;
+}
+
 .form-error {
   font-size: 12px;
   color: var(--red);
@@ -1509,16 +2026,37 @@ ul, ol {
 
 .map-placeholder {
   width: 100%;
-  height: 240px;
-  background: #e8e4dc;
   border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--mid-gray);
-  font-size: 14px;
+  overflow: hidden;
   border: 1px solid var(--border);
 }
+.map-placeholder iframe {
+  display: block;
+  width: 100%;
+  height: 220px;
+  border: 0;
+}
+.map-buttons {
+  display: flex;
+  gap: 8px;
+  padding: 12px;
+  background: #f7f5f1;
+  justify-content: center;
+}
+.map-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 18px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: opacity 0.15s;
+}
+.map-btn:hover { opacity: 0.85; }
+.map-btn-naver { background: #03C75A; color: #fff; }
+.map-btn-kakao { background: #FEE500; color: #3C1E1E; }
 
 /* ========================================
    점검 실적 (Results Grid)
@@ -1618,7 +2156,7 @@ ul, ol {
 }
 
 .faq-answer-inner {
-  padding: 0 24px 20px;
+  padding: 16px 24px 20px;
   font-size: 14px;
   color: var(--mid-gray);
   line-height: 1.8;
@@ -1638,8 +2176,8 @@ ul, ol {
 
 .footer-grid {
   display: grid;
-  grid-template-columns: 1.5fr 1fr 1fr 1fr;
-  gap: 40px;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr;
+  gap: 32px;
   margin-bottom: 60px;
 }
 
@@ -1795,6 +2333,14 @@ ul, ol {
     height: 360px;
   }
 
+  .about-image video {
+    height: 360px !important;
+  }
+
+  .guide-slideshow {
+    height: 360px;
+  }
+
   .timeline::before {
     left: 24px;
   }
@@ -1821,7 +2367,7 @@ ul, ol {
   }
 
   .footer-grid {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
   }
 
   .partners-grid {
@@ -1848,6 +2394,22 @@ ul, ol {
 
   .mobile-menu {
     display: flex;
+  }
+
+  .mobile-tab-bar {
+    display: flex;
+  }
+
+  .page-hero {
+    display: none !important;
+  }
+
+  .page-section {
+    padding-top: 44px;
+  }
+
+  #page-main {
+    padding-top: 0;
   }
 
   .hero-heading {
@@ -1909,16 +2471,20 @@ ul, ol {
   }
 
   .partners-grid {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
+    max-width: 400px;
   }
 
   .page-hero {
-    height: 40vh;
-    min-height: 300px;
+    display: none !important;
   }
 
-  .page-hero h1 {
-    font-size: 32px;
+  .about-image video {
+    height: 260px !important;
+  }
+
+  .guide-slideshow {
+    height: 260px;
   }
 
   .guide-features {
@@ -1960,8 +2526,12 @@ ul, ol {
   }
 
   .footer-grid {
-    grid-template-columns: 1fr;
-    gap: 32px;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px 32px;
+  }
+
+  .footer-brand {
+    grid-column: 1 / -1;
   }
 
   .footer-bottom {
@@ -1999,7 +2569,769 @@ ul, ol {
     font-size: 24px;
   }
 }
+
+/* ========================================
+   샘플 보고서 섹션
+   ======================================== */
+.sample-report-section {
+  background: var(--off-white);
+}
+
+.sample-report-grid {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.sample-report-cover {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.report-book {
+  position: relative;
+  width: 220px;
+  filter: drop-shadow(8px 8px 24px rgba(0,0,0,0.18));
+}
+
+.report-book-cover {
+  border-radius: 4px 12px 12px 4px;
+  height: 300px;
+  position: relative;
+  overflow: hidden;
+  perspective: 800px;
+  background: #2A7172;
+}
+
+.book-slide {
+  position: absolute;
+  inset: 0;
+  display: none;
+  transform-origin: left center;
+}
+
+.book-slide.active {
+  display: block;
+}
+
+.book-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.report-book-pages {
+  position: absolute;
+  top: 4px;
+  right: -8px;
+  width: 12px;
+  height: calc(100% - 8px);
+  background: repeating-linear-gradient(
+    to bottom,
+    #ddd 0px, #ddd 1px,
+    #f5f5f5 1px, #f5f5f5 3px
+  );
+  border-radius: 0 3px 3px 0;
+  box-shadow: 3px 2px 6px rgba(0,0,0,0.12);
+  z-index: -1;
+}
+
+.report-book-title {
+  font-size: 20px;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.3;
+  font-family: var(--font-sans-kr);
+}
+
+.report-book-sub {
+  font-size: 9px;
+  letter-spacing: 2px;
+  color: rgba(255,255,255,0.65);
+  font-family: var(--font-sans-en);
+  text-transform: uppercase;
+}
+
+.report-book-brand {
+  display: flex;
+  justify-content: center;
+  margin-top: auto;
+}
+
+.report-book-brand img {
+  height: 24px;
+  filter: brightness(0) invert(1) opacity(0.9);
+}
+
+.report-page-count {
+  font-size: 12px;
+  color: var(--light-gray);
+  letter-spacing: 0.5px;
+}
+
+.report-contents {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin: 28px 0 36px;
+}
+
+.report-content-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  font-size: 15px;
+  color: #555;
+  line-height: 1.5;
+}
+
+.report-content-num {
+  background: linear-gradient(135deg, #3E9FA0, #2A7172);
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 3px 9px;
+  border-radius: 20px;
+  white-space: nowrap;
+  margin-top: 3px;
+  flex-shrink: 0;
+}
+
+.btn-report-download {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(135deg, #3E9FA0, #2A7172);
+  color: #fff;
+  padding: 15px 32px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.2s, box-shadow 0.2s;
+  font-family: var(--font-sans-kr);
+}
+
+.btn-report-download:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(62,159,160,0.4);
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  .sample-report-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .sample-report-cover { order: -1; }
+  .report-book { width: 180px; }
+  .report-book-cover { height: 230px; }
+}
+
+/* ========================================
+   모바일 텍스트 탭바
+   ======================================== */
+.mobile-tab-bar {
+  display: none;
+  position: fixed;
+  top: var(--header-height);
+  left: 0;
+  right: 0;
+  height: 44px;
+  z-index: 1001;
+  background: #fff;
+  border-bottom: 1px solid #e5e5e5;
+  flex-direction: row;
+  align-items: center;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  gap: 0;
+}
+.mobile-tab-bar::-webkit-scrollbar { display: none; }
+.mob-tab {
+  flex-shrink: 0;
+  padding: 0 16px;
+  height: 44px;
+  line-height: 44px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #888;
+  cursor: pointer;
+  text-decoration: none;
+  font-family: var(--font-sans-kr);
+  border-bottom: 2px solid transparent;
+  white-space: nowrap;
+  transition: color 0.2s, border-color 0.2s;
+}
+.mob-tab.active {
+  color: var(--deep-navy);
+  border-bottom: 2px solid var(--deep-navy);
+  font-weight: 700;
+}
+.mob-tab-cta {
+  color: var(--gold) !important;
+  font-weight: 700;
+}
+
+/* ========================================
+   모바일 플로팅 상담 버튼 & 모달
+   ======================================== */
+.float-consult-btn {
+  display: none;
+  position: fixed;
+  bottom: 24px;
+  right: 20px;
+  z-index: 1000;
+  background: var(--gold);
+  color: var(--white);
+  border: none;
+  border-radius: 50px;
+  padding: 14px 20px;
+  font-size: 14px;
+  font-weight: 700;
+  font-family: var(--font-sans-kr);
+  cursor: pointer;
+  box-shadow: 0 6px 24px rgba(201,168,76,0.5);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.float-consult-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(201,168,76,0.6);
+}
+@media (min-width: 769px) {
+  .float-consult-btn { display: none !important; }
+}
+
+.float-consult-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 9998;
+  align-items: flex-end;
+  justify-content: center;
+}
+.float-consult-overlay.open {
+  display: flex;
+}
+.float-consult-panel {
+  background: var(--white);
+  width: 100%;
+  max-height: 90vh;
+  border-radius: 20px 20px 0 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.float-consult-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 20px 14px;
+  border-bottom: 1px solid var(--border);
+}
+.float-consult-header h3 {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--deep-navy);
+  margin: 0;
+}
+.float-consult-body {
+  padding: 20px;
+  overflow-y: auto;
+}
+
+/* ========================================
+   쿠키 정책 모달
+   ======================================== */
+.cookie-modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  z-index: 9999;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+.cookie-modal-overlay.open {
+  display: flex;
+}
+.cookie-modal {
+  background: var(--white);
+  border-radius: 12px;
+  max-width: 560px;
+  width: 100%;
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+}
+.cookie-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 28px 16px;
+  border-bottom: 1px solid var(--border);
+}
+.cookie-modal-header h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--deep-navy);
+  margin: 0;
+}
+.cookie-modal-close {
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #999;
+  cursor: pointer;
+  line-height: 1;
+  padding: 0 4px;
+}
+.cookie-modal-close:hover { color: var(--deep-navy); }
+.cookie-modal-body {
+  padding: 24px 28px;
+  overflow-y: auto;
+  font-size: 14px;
+  color: #444;
+  line-height: 1.7;
+}
+.cookie-updated {
+  font-size: 12px;
+  color: #999;
+  margin-bottom: 20px;
+}
+.cookie-modal-body h4 {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--deep-navy);
+  margin: 20px 0 8px;
+}
+.cookie-modal-body h4:first-of-type { margin-top: 0; }
+.cookie-modal-body p, .cookie-modal-body ul { margin: 0 0 8px; }
+.cookie-modal-body ul { padding-left: 18px; }
+.cookie-modal-body li { margin-bottom: 4px; }
+.cookie-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  margin-bottom: 8px;
+}
+.cookie-table th, .cookie-table td {
+  border: 1px solid var(--border);
+  padding: 8px 12px;
+  text-align: left;
+}
+.cookie-table th {
+  background: var(--off-white);
+  font-weight: 600;
+  color: var(--deep-navy);
+}
+
+/* ========================================
+   문의현황 페이지
+   ======================================== */
+.inquiry-hero {
+  padding: calc(var(--header-height) + 60px) 0 60px;
+  background: var(--white);
+  border-bottom: 1px solid #eee;
+}
+.inquiry-hero-title {
+  font-size: 48px;
+  font-weight: 700;
+  color: var(--primary-dark);
+  margin-bottom: 16px;
+  line-height: 1.2;
+}
+.inquiry-hero-desc {
+  font-size: 16px;
+  color: var(--mid-gray);
+  line-height: 1.7;
+}
+@media (max-width: 768px) {
+  .inquiry-hero { padding: calc(var(--header-height) + 24px) 0 24px; }
+  .inquiry-hero-title { font-size: 28px; }
+  .inquiry-hero-desc { font-size: 13px; }
+}
+.inquiry-stats {
+  background: var(--white);
+  padding: 40px 0;
+  border-bottom: 1px solid #eee;
+}
+.inquiry-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  background: #f4f7fb;
+  border-radius: 16px;
+  overflow: hidden;
+}
+.inquiry-stat-card {
+  padding: 36px 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  position: relative;
+  background: #f4f7fb;
+  transition: background 0.2s;
+}
+.inquiry-stat-card + .inquiry-stat-card::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 20%; height: 60%;
+  width: 1px;
+  background: #dde3ee;
+}
+.inquiry-stat-card:hover { background: #eaf0fa; }
+.inquiry-stat-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+.inquiry-stat-card:nth-child(1) .inquiry-stat-icon { background: #e8f4fd; color: #2563eb; }
+.inquiry-stat-card:nth-child(2) .inquiry-stat-icon { background: #ecfdf5; color: #059669; }
+.inquiry-stat-card:nth-child(3) .inquiry-stat-icon { background: #fef3c7; color: #d97706; }
+.inquiry-stat-label {
+  font-size: 13px;
+  color: #888;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+.inquiry-stat-num {
+  font-size: 36px;
+  font-weight: 700;
+  color: #1a2a3a;
+  line-height: 1;
+}
+.inquiry-stat-num .unit {
+  font-size: 15px;
+  font-weight: 500;
+  color: #666;
+  margin-left: 3px;
+}
+.inquiry-list-section {
+  padding: 48px 0 80px;
+}
+.inquiry-list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+.inquiry-list-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--primary-dark);
+}
+.btn-inquiry-primary {
+  padding: 11px 24px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  background: #1a4a4a;
+  color: #ffffff;
+  border: none;
+  transition: background 0.2s;
+}
+.btn-inquiry-primary:hover { background: #2A7172; }
+.inquiry-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.inquiry-table th {
+  padding: 13px 16px;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--mid-gray);
+  border-top: 2px solid #ddd;
+  border-bottom: 1px solid #e5e7eb;
+  background: #f8f9fa;
+}
+.inquiry-table th.col-apt { text-align: left; }
+.inquiry-table td {
+  padding: 17px 16px;
+  text-align: center;
+  font-size: 14px;
+  color: #555;
+  border-bottom: 1px solid #f0f0f0;
+}
+.inquiry-table td.col-apt {
+  text-align: left;
+  font-weight: 600;
+  color: var(--primary-dark);
+}
+.inquiry-table tr:hover td { background: #f8fafa; }
+.inq-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+.inq-applied  { background: #fff3e0; color: #d97706; }
+.inq-consulted{ background: #ecfdf5; color: #059669; }
+.inq-reserved { background: #eff6ff; color: #2563eb; }
+
+.inq-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  margin-top: 32px;
+  flex-wrap: wrap;
+}
+.inq-pagination button {
+  min-width: 36px;
+  height: 36px;
+  padding: 0 10px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  background: var(--white);
+  color: #555;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.inq-pagination button:hover { border-color: var(--primary); color: var(--primary); }
+.inq-pagination button.active { background: var(--primary-dark); color: var(--white); border-color: var(--primary-dark); font-weight: 700; }
+.inq-pagination button:disabled { opacity: 0.35; cursor: default; }
+
+@media (max-width: 768px) {
+  .inquiry-stats-grid { grid-template-columns: repeat(3, 1fr); border-radius: 12px; }
+  .inquiry-stat-card { padding: 20px 12px; }
+  .inquiry-stat-icon { width: 36px; height: 36px; font-size: 15px; }
+  .inquiry-stat-num { font-size: 20px; }
+  .inquiry-stat-num .unit { font-size: 12px; }
+  .inquiry-stat-label { font-size: 11px; }
+  .inquiry-table th:nth-child(1),
+  .inquiry-table td:nth-child(1),
+  .inquiry-table th:nth-child(2),
+  .inquiry-table td:nth-child(2),
+  .inquiry-table th:nth-child(4),
+  .inquiry-table td:nth-child(4) { display: none; }
+  .inquiry-table { table-layout: fixed; width: 100%; }
+  .inquiry-table td, .inquiry-table th { word-break: keep-all; }
+  .inquiry-table th:nth-child(5),
+  .inquiry-table td:nth-child(5) { white-space: nowrap; width: 90px; }
+  .inquiry-table th:nth-child(6),
+  .inquiry-table td:nth-child(6) { width: 72px; }
+  .inquiry-list-title { font-size: 18px; }
+}
 </style>
+
+<!-- JSON-LD: Organization -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "제로하자",
+  "alternateName": ["ZEROHAJA", "zerohaja", "제로하자 사전점검"],
+  "description": "아파트 사전점검 전문기업 제로하자. 2022년 설립, 1만 세대 이상 점검 실적. 건축 전문가가 직접 점검하는 신뢰할 수 있는 사전점검 서비스.",
+  "url": "https://zerohaza.co.kr",
+  "telephone": "1533-7033",
+  "foundingDate": "2022",
+  "logo": "https://zerohaza.co.kr/logo.png",
+  "areaServed": {
+    "@type": "Country",
+    "name": "대한민국"
+  },
+  "serviceType": ["아파트 사전점검", "하자점검", "사전점검대행"]
+}
+</script>
+
+<!-- JSON-LD: Service -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "아파트 사전점검 서비스",
+  "provider": {
+    "@type": "Organization",
+    "name": "제로하자"
+  },
+  "description": "제로하자의 아파트 사전점검 서비스. 건축 전문가가 직접 방문해 하자를 점검하고 공식 보고서를 제공합니다. 누적 1만 세대 이상 점검 실적.",
+  "areaServed": "대한민국",
+  "serviceType": "아파트 사전점검",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "제로하자 서비스",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "전문가 방문 사전점검",
+          "description": "건축 전문가가 직접 세대를 방문해 하자를 점검하고 공식 보고서를 작성합니다."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "하자 보고서 발행",
+          "description": "점검 결과를 사진·수치 포함 공식 보고서로 발행, 건설사 하자 접수에 활용합니다."
+        }
+      }
+    ]
+  }
+}
+</script>
+
+<!-- JSON-LD: FAQPage -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "제로하자는 어떤 회사인가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "제로하자(ZEROHAJA)는 2022년 설립된 아파트 사전점검 전문기업입니다. 누적 1만 세대 이상 점검 실적을 보유하고 있으며, 건축 전문가가 직접 방문해 하자를 점검하고 공식 보고서를 제공합니다. 대전·충청·세종 중심으로 전국 서비스를 운영합니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "아파트 사전점검이란 무엇인가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "아파트 사전점검은 입주 전 시행사가 지정한 날에 입주자가 해당 세대를 방문해 시공 상태를 확인하는 절차입니다. 발견된 하자는 입주 전 시공사에 보수를 요청할 수 있습니다. 제로하자는 전문가가 대신 점검하고 공식 보고서를 발행해 하자 접수를 도와드립니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "제로하자 사전점검 서비스 지역은 어디인가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "제로하자는 전국 단위로 서비스를 제공합니다. 대전·충청·세종을 중심으로 수도권, 기타 지역까지 출장 점검이 가능합니다. 문의는 1533-7033으로 연락주세요."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "사전점검 비용은 얼마인가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "제로하자 사전점검 비용은 세대 평형에 따라 다릅니다. 정확한 비용은 1533-7033으로 문의하시거나 홈페이지를 통해 상담받으시면 안내해드립니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "점검 후 보고서를 받을 수 있나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "네. 제로하자는 점검 완료 후 사진·수치가 포함된 공식 하자 보고서를 발행합니다. 보고서는 건설사 하자 접수 서류로 직접 활용하실 수 있습니다."
+      }
+    }
+  ]
+}
+</script>
+
+<!-- JSON-LD: WebSite -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "제로하자 ZEROHAJA",
+  "url": "https://zerohaza.co.kr",
+  "description": "아파트 사전점검 전문기업 제로하자. 1만 세대 이상 점검 실적, 전국 서비스.",
+  "inLanguage": "ko-KR",
+  "publisher": {
+    "@type": "Organization",
+    "name": "제로하자"
+  }
+}
+</script>
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "x24ay0ljw7");
+</script>
+
+<!-- Schema.org 구조화 데이터 -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "제로하자",
+  "legalName": "주식회사 알컴퍼니",
+  "url": "https://zerohaza.co.kr",
+  "logo": "https://zerohaza.co.kr/favicon.svg",
+  "image": "https://zerohaza.co.kr/logo.png",
+  "description": "건축 전문가가 직접 점검하는 신뢰할 수 있는 아파트 사전점검 서비스. 10,000+ 세대 점검 실적, 99.9% 중대하자 적출률.",
+  "telephone": "010-2900-3030",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "한밭대로 1297, 202호",
+    "addressLocality": "대전광역시 동구",
+    "addressCountry": "KR"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 36.3504,
+    "longitude": 127.3845
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+      "opens": "09:00",
+      "closes": "18:00"
+    }
+  ],
+  "sameAs": ["https://zerohaza.co.kr"],
+  "priceRange": "₩₩",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5.0",
+    "reviewCount": "100",
+    "bestRating": "5",
+    "worstRating": "1"
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "사전점검 서비스",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "기본 사전점검",
+          "description": "건축 전문가가 직접 세대 내 하자를 점검하고 보고서를 제공합니다."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "하자등록 대행",
+          "description": "점검 후 아파트 앱에 하자 등록까지 대행해드립니다."
+        }
+      }
+    ]
+  }
+}
+</script>
 </head>
 <body>
 
@@ -2009,16 +3341,17 @@ ul, ol {
 <header class="header" id="header">
   <div class="container">
     <div class="logo" onclick="navigateTo('main')">
-      <span class="logo-main"><span class="zero">ZERO</span><span class="haja">HAJA</span></span>
-      <span class="logo-sub">제로하자 사전점검</span>
+      <img class="logo-img logo-default" src="logo_w.png" alt="제로하자" fetchpriority="high" width="180" height="65">
+      <img class="logo-img logo-scrolled" src="logo.png" alt="제로하자">
     </div>
     <nav class="nav">
       <div class="nav-links">
-        <a class="nav-link active" onclick="navigateTo('main')">메인</a>
+        <a class="nav-link active" onclick="navigateTo('main')">제로하자</a>
         <a class="nav-link" onclick="navigateTo('inspection')">사전점검</a>
         <a class="nav-link" onclick="navigateTo('support')">고객지원</a>
       </div>
-      <button class="btn-cta btn-cta-gold" onclick="navigateTo('support')">무료상담 신청</button>
+      <button class="btn-cta btn-cta-ghost" onclick="navigateTo('reviews')">고객후기</button>
+      <button class="btn-cta btn-cta-gold" onclick="navigateTo('inquiry')">무료상담 신청</button>
     </nav>
     <div class="hamburger" id="hamburger" onclick="toggleMobileMenu()">
       <span></span>
@@ -2030,11 +3363,21 @@ ul, ol {
 
 <!-- 모바일 메뉴 -->
 <div class="mobile-menu" id="mobileMenu">
-  <a class="nav-link" onclick="navigateTo('main'); closeMobileMenu();">메인</a>
+  <a class="nav-link" onclick="navigateTo('main'); closeMobileMenu();">제로하자</a>
   <a class="nav-link" onclick="navigateTo('inspection'); closeMobileMenu();">사전점검</a>
   <a class="nav-link" onclick="navigateTo('support'); closeMobileMenu();">고객지원</a>
-  <button class="btn-cta btn-cta-gold" onclick="navigateTo('support'); closeMobileMenu();">무료상담 신청</button>
+  <a class="nav-link" onclick="navigateTo('reviews'); closeMobileMenu();">고객후기</a>
+  <button class="btn-cta btn-cta-gold" onclick="navigateTo('inquiry'); closeMobileMenu();">무료상담 신청</button>
 </div>
+
+<!-- 모바일 텍스트 탭바 -->
+<nav class="mobile-tab-bar" id="mobileTabBar">
+  <a class="mob-tab active" id="tab-main"       onclick="navigateTo('main')">홈</a>
+  <a class="mob-tab"        id="tab-inspection" onclick="navigateTo('inspection')">사전점검</a>
+  <a class="mob-tab"        id="tab-support"    onclick="navigateTo('support')">고객지원</a>
+  <a class="mob-tab"        id="tab-reviews"    onclick="navigateTo('reviews')">고객후기</a>
+  <a class="mob-tab mob-tab-cta"                onclick="navigateTo('inquiry')">무료상담</a>
+</nav>
 
 <!-- ========================================
      메인 페이지
@@ -2043,13 +3386,19 @@ ul, ol {
 
   <!-- 히어로 섹션 -->
   <section class="hero" id="hero">
-    <div class="hero-bg"></div>
+    <div class="hero-bg" role="presentation">
+      <picture>
+        <source media="(max-width: 768px)" srcset="images/hero-bg-mobile.webp" type="image/webp">
+        <source srcset="images/hero-bg.webp" type="image/webp">
+        <img src="images/hero-bg.jpg" alt="" fetchpriority="high" width="1600" height="2133" decoding="sync">
+      </picture>
+    </div>
     <div class="hero-content">
       <p class="hero-label">Professional Inspection Service</p>
       <h1 class="hero-heading">하자 없는 새 집,<br>제로하자가 보장합니다</h1>
       <p class="hero-desc">건축 전문가가 직접 점검하는 신뢰할 수 있는 사전점검 서비스<br>500가지 이상의 체크리스트로 꼼꼼하게 확인합니다</p>
       <div class="hero-buttons">
-        <button class="btn-hero-primary" onclick="navigateTo('support')">
+        <button class="btn-hero-primary" onclick="navigateTo('inquiry')">
           <i class="fas fa-clipboard-check"></i> 사전점검 신청하기
         </button>
         <button class="btn-hero-secondary" onclick="navigateTo('inspection')">
@@ -2124,42 +3473,16 @@ ul, ol {
           </div>
         </div>
         <div class="about-image fade-in-right">
-          <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800" alt="사전점검 현장">
+          <video autoplay muted loop playsinline preload="none"
+                 style="width:100%;height:500px;object-fit:cover;border-radius:8px;box-shadow:20px 20px 60px rgba(0,0,0,0.1);display:block;">
+            <source src="images/menu/ins_item.mp4" type="video/mp4">
+          </video>
         </div>
       </div>
     </div>
   </section>
 
   <!-- 주요 실적 섹션 -->
-  <section class="performance-section section-padding" id="performance">
-    <div class="container">
-      <div class="performance-header fade-in">
-        <p class="section-subtitle">Performance</p>
-        <h2 class="section-title">주요 실적</h2>
-        <p class="section-desc">수치로 증명하는 제로하자의 신뢰</p>
-      </div>
-      <div class="performance-grid">
-        <div class="performance-card fade-in">
-          <div class="performance-card-icon"><i class="fas fa-project-diagram"></i></div>
-          <h3>1,200<span style="font-size:20px;">+</span></h3>
-          <h4>완료 프로젝트</h4>
-          <p>총 1,200건 이상의 프로젝트를 성공적으로 완료하였습니다</p>
-        </div>
-        <div class="performance-card fade-in">
-          <div class="performance-card-icon"><i class="fas fa-map-marked-alt"></i></div>
-          <h3>17</h3>
-          <h4>점검 지역</h4>
-          <p>전국 17개 시도에서 서비스를 제공하고 있습니다</p>
-        </div>
-        <div class="performance-card fade-in">
-          <div class="performance-card-icon"><i class="fas fa-handshake"></i></div>
-          <h3>50<span style="font-size:20px;">+</span></h3>
-          <h4>파트너 건설사</h4>
-          <p>50개 이상의 건설사와 협력 관계를 유지하고 있습니다</p>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <!-- 장비 현황 섹션 -->
   <section class="equipment-section section-padding" id="equipment">
@@ -2167,41 +3490,84 @@ ul, ol {
       <div class="equipment-header fade-in">
         <p class="section-subtitle">Equipment</p>
         <h2 class="section-title">최첨단 점검 장비 보유</h2>
-        <p class="section-desc">정밀한 점검을 위한 전문 장비를 갖추고 있습니다</p>
+        <p class="section-desc">제로하자는 저가 중국산이 아닌, 널리 검증된 계측장비만 사용하고 있습니다.</p>
       </div>
       <div class="equipment-grid">
-        <div class="equipment-card fade-in">
-          <img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?w=800" alt="열화상 카메라" class="equipment-card-img">
-          <div class="equipment-card-body">
-            <h4>열화상 카메라</h4>
-            <p class="equipment-model">FLIR E5</p>
-            <p>벽체 내부 결로, 단열 불량을 정밀하게 탐지합니다</p>
+        <a href="https://www.flir.com/" target="_blank" rel="noopener" style="text-decoration:none;">
+          <div class="equipment-card fade-in">
+            <picture>
+              <source srcset="images/equipment-thermal.webp" type="image/webp">
+              <img src="images/equipment-thermal.jpg.png" alt="열화상 카메라 FLIR E5" class="equipment-card-img" width="294" height="294">
+            </picture>
+            <div class="equipment-card-body">
+              <h4>열화상 카메라</h4>
+              <p class="equipment-model">FLIR E5</p>
+              <p>FLIR 社의 휴대용 IR카메라로 온도의 변화로 감지할 수 있는 모든 종류(단열,난방)의 검사를 수행할 수 있습니다.</p>
+            </div>
           </div>
-        </div>
+        </a>
         <div class="equipment-card fade-in">
-          <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800" alt="레이저 수평기" class="equipment-card-img">
+          <picture>
+            <source srcset="images/equipment-laser.webp" type="image/webp">
+            <img src="images/equipment-laser.jpg.png" alt="레이저 수평기 4D Level Pro" class="equipment-card-img" width="294" height="294">
+          </picture>
           <div class="equipment-card-body">
             <h4>레이저 수평기</h4>
             <p class="equipment-model">4D Level Pro</p>
             <p>바닥·벽면 기울기를 정밀하게 측정합니다</p>
           </div>
         </div>
-        <div class="equipment-card fade-in">
-          <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800" alt="라돈 측정기" class="equipment-card-img">
-          <div class="equipment-card-body">
-            <h4>라돈 측정기</h4>
-            <p class="equipment-model">Radon Eye RD200</p>
-            <p>실내 방사성 가스 농도를 정확히 측정합니다</p>
+        <a href="https://radonftlab.com/kr/" target="_blank" rel="noopener" style="text-decoration:none;">
+          <div class="equipment-card fade-in">
+            <picture>
+              <source srcset="images/equipment-radon.webp" type="image/webp">
+              <img src="images/equipment-radon.jpg.png" alt="라돈 측정기 Radon Eye RD200" class="equipment-card-img" width="294" height="294">
+            </picture>
+            <div class="equipment-card-body">
+              <h4>라돈 측정기</h4>
+              <p class="equipment-model">Radon Eye RD200</p>
+              <p>(주)에프티랩社 간이 라돈측정기 기존 라돈측정기의 20배 정확도 실내의 라돈 농도를 측정합니다</p>
+            </div>
           </div>
-        </div>
-        <div class="equipment-card fade-in">
-          <img src="https://images.unsplash.com/photo-1560448204-603b3fc33ddc?w=800" alt="VOC 측정기" class="equipment-card-img">
-          <div class="equipment-card-body">
-            <h4>유기화합물 측정기</h4>
-            <p class="equipment-model">VOC Detector Pro</p>
-            <p>새집증후군 원인 물질을 정확히 측정합니다</p>
+        </a>
+        <a href="https://www.temtop.co.uk/" target="_blank" rel="noopener" style="text-decoration:none;">
+          <div class="equipment-card fade-in">
+            <picture>
+              <source srcset="images/equipment-voc.webp" type="image/webp">
+              <img src="images/equipment-voc.png" alt="공기질 측정기 Air Quality Monitor" class="equipment-card-img" width="294" height="294">
+            </picture>
+            <div class="equipment-card-body">
+              <h4>공기질 측정기</h4>
+              <p class="equipment-model">VOC Detector Pro</p>
+              <p>영국 Temtop 社의 2세대 공기질 측정기로 미세먼지, 포름알데하이드, Tvoc를 정확히 측정합니다</p>
+            </div>
           </div>
-        </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 점검 실적 -->
+  <section class="results-section section-padding">
+    <div class="container">
+      <div class="fade-in" style="text-align:center;margin-bottom:48px;">
+        <p class="section-subtitle">Results</p>
+        <h2 class="section-title">점검 실적</h2>
+        <p class="section-desc">제로하자가 직접 점검한 아파트 단지 실적입니다</p>
+      </div>
+      <div class="results-filter fade-in" id="resultsFilter">
+        <button class="filter-btn active" data-region="전체"  onclick="filterResults(this,'전체')">전체</button>
+        <button class="filter-btn"        data-region="대전"  onclick="filterResults(this,'대전')">대전</button>
+        <button class="filter-btn"        data-region="충청"  onclick="filterResults(this,'충청')">충청</button>
+        <button class="filter-btn"        data-region="세종"  onclick="filterResults(this,'세종')">세종</button>
+        <button class="filter-btn"        data-region="수도권" onclick="filterResults(this,'수도권')">수도권</button>
+        <button class="filter-btn"        data-region="기타"  onclick="filterResults(this,'기타')">기타</button>
+      </div>
+      <div class="results-grid fade-in" id="resultsGrid"></div>
+      <div class="results-more-wrap fade-in">
+        <button class="results-more-btn" id="moreBtn" onclick="showMoreResults()">
+          더보기 <i class="fas fa-chevron-down"></i>
+        </button>
       </div>
     </div>
   </section>
@@ -2212,17 +3578,44 @@ ul, ol {
       <div class="partners-header fade-in">
         <p class="section-subtitle">Partners</p>
         <h2 class="section-title">함께하는 파트너사</h2>
-        <p class="section-desc">신뢰를 바탕으로 다양한 건설사와 협력하고 있습니다</p>
+        <p class="section-desc">신뢰를 바탕으로 다양한 파트너사와 업무협력 관계를 맺고 있습니다.</p>
       </div>
       <div class="partners-grid fade-in">
-        <div class="partner-slot">PARTNER A</div>
-        <div class="partner-slot">PARTNER B</div>
-        <div class="partner-slot">PARTNER C</div>
-        <div class="partner-slot">PARTNER D</div>
-        <div class="partner-slot">PARTNER E</div>
-        <div class="partner-slot">PARTNER F</div>
-        <div class="partner-slot">PARTNER G</div>
-        <div class="partner-slot">PARTNER H</div>
+        <!-- 세스코 -->
+        <div class="partner-card" onclick="this.classList.toggle('flipped')">
+          <div class="partner-card-inner">
+            <div class="partner-card-front">
+              <picture>
+                <source srcset="images/Partners/p_cesco.webp" type="image/webp">
+                <img src="images/Partners/p_cesco.jpg" alt="세스코" style="max-height:80px;max-width:75%;object-fit:contain;">
+              </picture>
+              <span class="partner-card-hint">클릭하여 자세히 보기</span>
+            </div>
+            <div class="partner-card-back">
+              <img src="images/brand/mou_cesco.png" alt="세스코 MOU 협약" class="partner-card-back-photo">
+              <div class="partner-card-back-body">
+                <p>국내 최대의 환경위생기업 세스코와 공동주택 해충진단 및 사전점검 업무 협력관계를 맺고 있습니다. 제로하자는 세스코의 기술력으로 공동주택 사전점검 시 대두되는 해충들(먼지다듬이, 뿌리혹파리)에 대한 기술지원을 받고 있습니다.</p>
+                <span class="partner-card-close">▲ 닫기</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- LG 베스트샵 -->
+        <div class="partner-card" onclick="this.classList.toggle('flipped')">
+          <div class="partner-card-inner">
+            <div class="partner-card-front">
+              <img src="images/Partners/logo-bestshop.svg" alt="LG 베스트샵" style="max-height:60px;max-width:75%;object-fit:contain;">
+              <span class="partner-card-hint">클릭하여 자세히 보기</span>
+            </div>
+            <div class="partner-card-back">
+              <img src="images/brand/mou_lg.JPG" alt="LG 베스트샵 MOU 협약" class="partner-card-back-photo">
+              <div class="partner-card-back-body">
+                <p>LG전자 베스트샵에서 운영하는 "신축 아파트 입주민" 대상 하자설명회에 파트너로써 참여하고 있습니다. 제로하자는 LG전자 고객들을 대상으로 하자설명회에서 강연자 역할을 수행하고 있습니다.</p>
+                <span class="partner-card-close">▲ 닫기</span>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
       <p class="partners-footer fade-in">더 많은 파트너사와 함께 성장하고 있습니다</p>
     </div>
@@ -2237,9 +3630,9 @@ ul, ol {
 
   <!-- 페이지 히어로 -->
   <section class="page-hero">
-    <div class="page-hero-bg" style="background-image: url('https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1600');"></div>
+    <div class="page-hero-bg" style="background-image: url('images/menu/ins_header.jpg');"></div>
     <div class="page-hero-content">
-      <h1>사전점검 서비스</h1>
+      <h2>사전점검 서비스</h2>
       <div class="breadcrumb">
         <a onclick="navigateTo('main')">홈</a> &nbsp;/&nbsp; <span>사전점검</span>
       </div>
@@ -2251,7 +3644,12 @@ ul, ol {
     <div class="container">
       <div class="guide-grid">
         <div class="guide-image fade-in-left">
-          <img src="https://images.unsplash.com/photo-1560448204-603b3fc33ddc?w=800" alt="사전점검 안내">
+          <div class="guide-slideshow" id="guideSlideshow">
+            <img src="images/menu/pre_1.jpg" alt="사전점검" class="slide active">
+            <img src="images/menu/pre_2.jpg" alt="사전점검" class="slide">
+            <img src="images/menu/pre_3.jpg" alt="사전점검" class="slide">
+            <div class="slide-overlay"></div>
+          </div>
         </div>
         <div class="fade-in-right">
           <p class="section-subtitle">Inspection Guide</p>
@@ -2282,6 +3680,9 @@ ul, ol {
 
   <!-- 점검 항목 카테고리 (탭 UI) -->
   <section class="categories-section section-padding">
+    <video class="section-video-bg" autoplay muted loop playsinline preload="none">
+      <source src="images/menu/ins_item.mp4" type="video/mp4">
+    </video>
     <div class="container">
       <div class="categories-header fade-in">
         <p class="section-subtitle">Inspection Items</p>
@@ -2290,194 +3691,438 @@ ul, ol {
       </div>
       <div class="tab-nav fade-in">
         <button class="tab-btn active" onclick="switchTab(event, 'tab-all')">전체</button>
-        <button class="tab-btn" onclick="switchTab(event, 'tab-structure')">구조·안전</button>
-        <button class="tab-btn" onclick="switchTab(event, 'tab-finish')">마감·미장</button>
+        <button class="tab-btn" onclick="switchTab(event, 'tab-finish')">마감재</button>
+        <button class="tab-btn" onclick="switchTab(event, 'tab-window')">창호·문</button>
+        <button class="tab-btn" onclick="switchTab(event, 'tab-furniture')">가구·수납</button>
         <button class="tab-btn" onclick="switchTab(event, 'tab-plumbing')">설비·배관</button>
         <button class="tab-btn" onclick="switchTab(event, 'tab-electric')">전기·통신</button>
         <button class="tab-btn" onclick="switchTab(event, 'tab-env')">환경</button>
       </div>
       <div class="tab-content active" id="tab-all">
         <div class="checklist">
-          <div class="checklist-item"><i class="fas fa-check-circle"></i>바닥 균열 및 들뜸 여부</div>
-          <div class="checklist-item"><i class="fas fa-check-circle"></i>벽면 도배 불량 및 오염</div>
+          <div class="checklist-item"><i class="fas fa-check-circle"></i>도배 이음새 및 기포 확인</div>
+          <div class="checklist-item"><i class="fas fa-check-circle"></i>마루·타일 들뜸 및 단차</div>
           <div class="checklist-item"><i class="fas fa-check-circle"></i>창호 개폐 불량 및 기밀성</div>
-          <div class="checklist-item"><i class="fas fa-check-circle"></i>누수 흔적 및 결로 발생</div>
-          <div class="checklist-item"><i class="fas fa-check-circle"></i>전등·콘센트 작동 여부</div>
-          <div class="checklist-item"><i class="fas fa-check-circle"></i>배수 및 급수 점검</div>
-          <div class="checklist-item"><i class="fas fa-check-circle"></i>실내 공기질(VOC) 측정</div>
-          <div class="checklist-item"><i class="fas fa-check-circle"></i>바닥 수평도 측정</div>
-        </div>
-      </div>
-      <div class="tab-content" id="tab-structure">
-        <div class="checklist">
-          <div class="checklist-item"><i class="fas fa-check-circle"></i>구조체 균열 여부 확인</div>
-          <div class="checklist-item"><i class="fas fa-check-circle"></i>기둥·보·슬래브 이상 점검</div>
-          <div class="checklist-item"><i class="fas fa-check-circle"></i>바닥 처짐 및 진동 여부</div>
-          <div class="checklist-item"><i class="fas fa-check-circle"></i>내력벽 크랙 발생 여부</div>
-          <div class="checklist-item"><i class="fas fa-check-circle"></i>발코니 구조 안전성 확인</div>
-          <div class="checklist-item"><i class="fas fa-check-circle"></i>천장 구조재 노출 여부</div>
+          <div class="checklist-item"><i class="fas fa-check-circle"></i>배관 누수 및 배수 상태</div>
+          <div class="checklist-item"><i class="fas fa-check-circle"></i>콘센트·스위치·조명 작동</div>
+          <div class="checklist-item"><i class="fas fa-check-circle"></i>가구·수납장 마감 및 작동</div>
+          <div class="checklist-item"><i class="fas fa-check-circle"></i>실내 공기질(VOC·라돈) 측정</div>
+          <div class="checklist-item"><i class="fas fa-check-circle"></i>단열·환기 시스템 상태</div>
         </div>
       </div>
       <div class="tab-content" id="tab-finish">
         <div class="checklist">
-          <div class="checklist-item"><i class="fas fa-check-circle"></i>도배 이음새 및 기포 확인</div>
-          <div class="checklist-item"><i class="fas fa-check-circle"></i>바닥재 들뜸 및 스크래치</div>
-          <div class="checklist-item"><i class="fas fa-check-circle"></i>걸레받이·몰딩 시공 상태</div>
-          <div class="checklist-item"><i class="fas fa-check-circle"></i>타일 부착 불량 여부</div>
-          <div class="checklist-item"><i class="fas fa-check-circle"></i>실리콘 시공 상태 확인</div>
-          <div class="checklist-item"><i class="fas fa-check-circle"></i>페인트 얼룩 및 흘러내림</div>
+          <div class="checklist-item"><i class="fas fa-check-circle"></i>도배 이음새·기포·오염 확인</div>
+          <div class="checklist-item"><i class="fas fa-check-circle"></i>마루 들뜸·스크래치·단차</div>
+          <div class="checklist-item"><i class="fas fa-check-circle"></i>타일 부착 불량·균열·줄눈</div>
+          <div class="checklist-item"><i class="fas fa-check-circle"></i>도장·미장 얼룩 및 흘러내림</div>
+          <div class="checklist-item"><i class="fas fa-check-circle"></i>코킹·실리콘 마감 상태</div>
+          <div class="checklist-item"><i class="fas fa-check-circle"></i>아트월·천장마감재·석재 상태</div>
+          <div class="checklist-item"><i class="fas fa-check-circle"></i>내장판넬 들뜸 및 마감 불량</div>
+        </div>
+      </div>
+      <div class="tab-content" id="tab-window">
+        <div class="checklist">
+          <div class="checklist-item"><i class="fas fa-check-circle"></i>PL창호 개폐 불량 및 기밀성</div>
+          <div class="checklist-item"><i class="fas fa-check-circle"></i>PL창틀 실리콘·결로 흔적</div>
+          <div class="checklist-item"><i class="fas fa-check-circle"></i>목창호·방화문 닫힘 불량</div>
+          <div class="checklist-item"><i class="fas fa-check-circle"></i>중문 레일·잠금 작동 확인</div>
+          <div class="checklist-item"><i class="fas fa-check-circle"></i>분합창·터닝도어 작동 상태</div>
+          <div class="checklist-item"><i class="fas fa-check-circle"></i>실외기루버창 고정 상태</div>
+          <div class="checklist-item"><i class="fas fa-check-circle"></i>창호틀 스크래치·도장 불량</div>
+        </div>
+      </div>
+      <div class="tab-content" id="tab-furniture">
+        <div class="checklist">
+          <div class="checklist-item"><i class="fas fa-check-circle"></i>신발장 경첩·도어 작동</div>
+          <div class="checklist-item"><i class="fas fa-check-circle"></i>붙박이장 마감 및 서랍 작동</div>
+          <div class="checklist-item"><i class="fas fa-check-circle"></i>주방 상·하부장 도어 처짐</div>
+          <div class="checklist-item"><i class="fas fa-check-circle"></i>냉장고장·상부장 마감 상태</div>
+          <div class="checklist-item"><i class="fas fa-check-circle"></i>욕실장·화장대 작동 확인</div>
+          <div class="checklist-item"><i class="fas fa-check-circle"></i>옵션가구 설치 및 마감 상태</div>
+          <div class="checklist-item"><i class="fas fa-check-circle"></i>주방상판·아일랜드 상판 스크래치</div>
         </div>
       </div>
       <div class="tab-content" id="tab-plumbing">
         <div class="checklist">
-          <div class="checklist-item"><i class="fas fa-check-circle"></i>급수·급탕 배관 누수 확인</div>
-          <div class="checklist-item"><i class="fas fa-check-circle"></i>배수 트랩 설치 상태</div>
-          <div class="checklist-item"><i class="fas fa-check-circle"></i>욕실 방수 테스트</div>
-          <div class="checklist-item"><i class="fas fa-check-circle"></i>보일러 정상 가동 여부</div>
-          <div class="checklist-item"><i class="fas fa-check-circle"></i>수전류 작동 확인</div>
-          <div class="checklist-item"><i class="fas fa-check-circle"></i>하수관 역류 여부 확인</div>
+          <div class="checklist-item"><i class="fas fa-check-circle"></i>배관 연결부 누수 흔적 확인</div>
+          <div class="checklist-item"><i class="fas fa-check-circle"></i>배수구·씽크볼 배수 상태</div>
+          <div class="checklist-item"><i class="fas fa-check-circle"></i>보일러·난방분배기 작동</div>
+          <div class="checklist-item"><i class="fas fa-check-circle"></i>수전 작동 및 누수 여부</div>
+          <div class="checklist-item"><i class="fas fa-check-circle"></i>세면기·양변기·욕조 상태</div>
+          <div class="checklist-item"><i class="fas fa-check-circle"></i>샤워부스 실리콘·방수 확인</div>
+          <div class="checklist-item"><i class="fas fa-check-circle"></i>하수 역류 및 악취 여부</div>
         </div>
       </div>
       <div class="tab-content" id="tab-electric">
         <div class="checklist">
-          <div class="checklist-item"><i class="fas fa-check-circle"></i>분전반 차단기 작동 확인</div>
-          <div class="checklist-item"><i class="fas fa-check-circle"></i>콘센트 접지 상태 점검</div>
-          <div class="checklist-item"><i class="fas fa-check-circle"></i>조명 스위치 정상 여부</div>
-          <div class="checklist-item"><i class="fas fa-check-circle"></i>인터폰·도어벨 작동</div>
-          <div class="checklist-item"><i class="fas fa-check-circle"></i>통신 단자함 배선 상태</div>
-          <div class="checklist-item"><i class="fas fa-check-circle"></i>화재감지기 설치 확인</div>
+          <div class="checklist-item"><i class="fas fa-check-circle"></i>콘센트·스위치 작동 확인</div>
+          <div class="checklist-item"><i class="fas fa-check-circle"></i>조명·주방 메인조명 점등</div>
+          <div class="checklist-item"><i class="fas fa-check-circle"></i>인터폰·월패드(홈IOT) 작동</div>
+          <div class="checklist-item"><i class="fas fa-check-circle"></i>화재감지기·스프링클러 설치</div>
+          <div class="checklist-item"><i class="fas fa-check-circle"></i>전열교환기·일괄소등스위치</div>
+          <div class="checklist-item"><i class="fas fa-check-circle"></i>가스감지기 설치 상태 확인</div>
         </div>
       </div>
       <div class="tab-content" id="tab-env">
         <div class="checklist">
-          <div class="checklist-item"><i class="fas fa-check-circle"></i>포름알데히드(HCHO) 측정</div>
-          <div class="checklist-item"><i class="fas fa-check-circle"></i>TVOC 농도 측정</div>
-          <div class="checklist-item"><i class="fas fa-check-circle"></i>미세먼지(PM2.5/PM10) 측정</div>
+          <div class="checklist-item"><i class="fas fa-check-circle"></i>단열재 시공 상태 확인</div>
+          <div class="checklist-item"><i class="fas fa-check-circle"></i>환기팬·디퓨저 작동 확인</div>
+          <div class="checklist-item"><i class="fas fa-check-circle"></i>실외기 설치 및 고정 상태</div>
+          <div class="checklist-item"><i class="fas fa-check-circle"></i>에어컨 배관 및 작동 여부</div>
+          <div class="checklist-item"><i class="fas fa-check-circle"></i>VOC·포름알데히드 측정</div>
           <div class="checklist-item"><i class="fas fa-check-circle"></i>라돈 가스 농도 측정</div>
           <div class="checklist-item"><i class="fas fa-check-circle"></i>열화상 단열 성능 점검</div>
-          <div class="checklist-item"><i class="fas fa-check-circle"></i>환기 시스템 작동 확인</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 점검 절차 (Timeline) -->
-  <section class="process-section section-padding">
+  <!-- 주요 하자 유형 -->
+  <section class="defect-gallery-section section-padding">
     <div class="container">
-      <div class="process-header fade-in">
-        <p class="section-subtitle">Process</p>
-        <h2 class="section-title">점검 절차</h2>
-        <p class="section-desc">체계적인 6단계 프로세스로 빈틈없이 점검합니다</p>
+      <div class="defect-gallery-header fade-in">
+        <p class="section-subtitle">Defect Cases</p>
+        <h2 class="section-title">주요 하자 유형</h2>
+        <p class="section-desc">실제 점검 현장에서 촬영된 하자 사례입니다</p>
       </div>
-      <div class="timeline">
-        <div class="timeline-item fade-in">
-          <div class="timeline-dot">01</div>
-          <div class="timeline-content">
-            <p class="timeline-step">STEP 01</p>
-            <h4>상담 및 예약</h4>
-            <p>전화·온라인으로 점검 일정 상담 후 예약을 확정합니다. 단지 정보와 평형을 확인하여 최적의 점검 계획을 수립합니다.</p>
+
+      <!-- 마감 하자 -->
+      <div class="defect-group fade-in">
+        <div class="defect-group-meta">
+          <span class="defect-group-badge minor">마감 하자</span>
+        </div>
+        <div class="defect-group-title">마감재 · 설비 하자</div>
+        <div class="defect-group-desc">도배, 타일, 마루, 창호 등 육안으로 확인 가능한 시공 불량</div>
+        <br>
+
+        <!-- 피처드 + 서브 2×2 -->
+        <div class="defect-hero">
+          <div class="defect-photo featured">
+            <img src="images/defect-samples/단순 하자/도배_이음불량.jpg" alt="도배 이음불량" loading="lazy">
+            <div class="defect-photo-overlay"><span class="defect-photo-label">도배 이음불량</span></div>
+          </div>
+          <div class="defect-sub-grid">
+            <div class="defect-photo">
+              <img src="images/defect-samples/단순 하자/타일_들뜸.jpg" alt="타일 들뜸" loading="lazy">
+              <div class="defect-photo-overlay"><span class="defect-photo-label">타일 들뜸</span></div>
+            </div>
+            <div class="defect-photo">
+              <img src="images/defect-samples/단순 하자/창틀_파손.jpg" alt="창틀 파손" loading="lazy">
+              <div class="defect-photo-overlay"><span class="defect-photo-label">창틀 파손</span></div>
+            </div>
+            <div class="defect-photo">
+              <img src="images/defect-samples/단순 하자/신발장_파손.jpg" alt="신발장 파손" loading="lazy">
+              <div class="defect-photo-overlay"><span class="defect-photo-label">신발장 파손</span></div>
+            </div>
+            <div class="defect-photo">
+              <img src="images/defect-samples/단순 하자/마루_찍힘.jpg" alt="마루 찍힘" loading="lazy">
+              <div class="defect-photo-overlay"><span class="defect-photo-label">마루 찍힘</span></div>
+            </div>
           </div>
         </div>
-        <div class="timeline-item fade-in">
-          <div class="timeline-dot">02</div>
-          <div class="timeline-content">
-            <p class="timeline-step">STEP 02</p>
-            <h4>점검 전 안내</h4>
-            <p>점검 당일 준비사항 및 주의사항을 안내 문자로 발송합니다. 입주민 동반 여부, 세대 내 확인 사항 등을 사전에 공유합니다.</p>
+
+        <!-- 나머지 15개 -->
+        <div class="defect-rest-grid">
+          <div class="defect-photo"><img src="images/defect-samples/단순 하자/거실간접등_점등불량.jpg" alt="거실 간접등 점등불량" loading="lazy"><div class="defect-photo-overlay"><span class="defect-photo-label">간접등 점등불량</span></div></div>
+          <div class="defect-photo"><img src="images/defect-samples/단순 하자/도배_주름.jpg" alt="도배 주름" loading="lazy"><div class="defect-photo-overlay"><span class="defect-photo-label">도배 주름</span></div></div>
+          <div class="defect-photo"><img src="images/defect-samples/단순 하자/도장_이색과 면불량.jpg" alt="도장 면불량" loading="lazy"><div class="defect-photo-overlay"><span class="defect-photo-label">도장 면불량</span></div></div>
+          <div class="defect-photo"><img src="images/defect-samples/단순 하자/배관_마감캡 누락.jpg" alt="배관 마감캡 누락" loading="lazy"><div class="defect-photo-overlay"><span class="defect-photo-label">배관 마감캡 누락</span></div></div>
+          <div class="defect-photo"><img src="images/defect-samples/단순 하자/상판_파손.jpg" alt="상판 파손" loading="lazy"><div class="defect-photo-overlay"><span class="defect-photo-label">상판 파손</span></div></div>
+          <div class="defect-photo"><img src="images/defect-samples/단순 하자/수전_수평불량.jpg" alt="수전 수평불량" loading="lazy"><div class="defect-photo-overlay"><span class="defect-photo-label">수전 수평불량</span></div></div>
+          <div class="defect-photo"><img src="images/defect-samples/단순 하자/스프링클러_차폐판누락.jpg" alt="스프링클러 차폐판 누락" loading="lazy"><div class="defect-photo-overlay"><span class="defect-photo-label">스프링클러 차폐판 누락</span></div></div>
+          <div class="defect-photo"><img src="images/defect-samples/단순 하자/신발장_개폐불량.jpg" alt="신발장 개폐불량" loading="lazy"><div class="defect-photo-overlay"><span class="defect-photo-label">신발장 개폐불량</span></div></div>
+          <div class="defect-photo"><img src="images/defect-samples/단순 하자/타일_구배불량.jpg" alt="타일 구배불량" loading="lazy"><div class="defect-photo-overlay"><span class="defect-photo-label">타일 구배불량</span></div></div>
+          <div class="defect-photo"><img src="images/defect-samples/단순 하자/타일_줄눈간격불량.jpg" alt="타일 줄눈간격 불량" loading="lazy"><div class="defect-photo-overlay"><span class="defect-photo-label">타일 줄눈간격 불량</span></div></div>
+        </div>
+      </div>
+
+      <!-- 중대 하자 -->
+      <div class="defect-group fade-in">
+        <div class="defect-group-meta">
+          <span class="defect-group-badge major">중대 하자</span>
+        </div>
+        <div class="defect-group-title">구조 · 설비 중대 하자</div>
+        <div class="defect-group-desc">바닥 평탄도 불량, 배관 시공 오류 등 생활에 직접적 영향을 주는 하자</div>
+        <br>
+
+        <!-- 피처드 + 서브 2×2 -->
+        <div class="defect-hero">
+          <div class="defect-photo featured">
+            <img src="images/defect-samples/중대하자/난방 엑셀파이프_상이시공.jpg" alt="난방배관 상이시공" loading="lazy">
+            <div class="defect-photo-overlay"><span class="defect-photo-label">난방배관 상이시공</span></div>
+          </div>
+          <div class="defect-sub-grid">
+            <div class="defect-photo">
+              <img src="images/defect-samples/중대하자/마루_마루간 수직단차.JPG" alt="마루 수직단차" loading="lazy">
+              <div class="defect-photo-overlay"><span class="defect-photo-label">마루 수직단차</span></div>
+            </div>
+            <div class="defect-photo">
+              <img src="images/defect-samples/중대하자/마루_방통미장 꺼짐.JPG" alt="방통미장 꺼짐" loading="lazy">
+              <div class="defect-photo-overlay"><span class="defect-photo-label">방통미장 꺼짐</span></div>
+            </div>
+            <div class="defect-photo">
+              <img src="images/defect-samples/중대하자/단열재시공불량_실사.jpg" alt="단열재 시공불량" loading="lazy">
+              <div class="defect-photo-overlay"><span class="defect-photo-label">단열재 시공불량</span></div>
+            </div>
+            <div class="defect-photo">
+              <img src="images/defect-samples/중대하자/PL창호_개폐불량.jpg" alt="창호 개폐불량" loading="lazy">
+              <div class="defect-photo-overlay"><span class="defect-photo-label">창호 개폐불량</span></div>
+            </div>
           </div>
         </div>
-        <div class="timeline-item fade-in">
-          <div class="timeline-dot">03</div>
-          <div class="timeline-content">
-            <p class="timeline-step">STEP 03</p>
-            <h4>전문가 방문</h4>
-            <p>건축기사 자격증을 보유한 전문 점검가 2~3인이 세대를 방문합니다.</p>
-          </div>
+
+        <!-- 나머지 4개 -->
+        <div class="defect-rest-grid">
+          <div class="defect-photo"><img src="images/defect-samples/중대하자/난방 엑셀파이프_정상시공.jpg" alt="난방배관 정상시공 비교" loading="lazy"><div class="defect-photo-overlay"><span class="defect-photo-label">정상시공 비교</span></div></div>
+          <div class="defect-photo"><img src="images/defect-samples/중대하자/단열재시공불량_IR.jpg" alt="단열불량 열화상" loading="lazy"><div class="defect-photo-overlay"><span class="defect-photo-label">단열불량 열화상</span></div></div>
+          <div class="defect-photo"><img src="images/defect-samples/중대하자/마루_마루 끝 솟음.JPG" alt="마루 끝 솟음" loading="lazy"><div class="defect-photo-overlay"><span class="defect-photo-label">마루 끝 솟음</span></div></div>
+          <div class="defect-photo"><img src="images/defect-samples/중대하자/창틀_수직불량.jpg" alt="창틀 수직불량" loading="lazy"><div class="defect-photo-overlay"><span class="defect-photo-label">창틀 수직불량</span></div></div>
+          <div class="defect-photo"><img src="images/defect-samples/단순 하자/마루_수평불량.jpg" alt="마루 수평불량" loading="lazy"><div class="defect-photo-overlay"><span class="defect-photo-label">마루 수평불량</span></div></div>
         </div>
-        <div class="timeline-item fade-in">
-          <div class="timeline-dot">04</div>
-          <div class="timeline-content">
-            <p class="timeline-step">STEP 04</p>
-            <h4>현장 점검</h4>
-            <p>500가지 이상의 체크리스트 항목을 기반으로 육안 점검, 장비 점검, 공기질 측정까지 정밀하게 진행합니다.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 샘플 보고서 -->
+  <section class="sample-report-section section-padding">
+    <div class="container">
+      <div class="sample-report-grid">
+        <div class="sample-report-cover fade-in-left">
+          <div class="report-book">
+            <div class="report-book-cover" id="reportBookCover">
+              <div class="book-slide active"><img src="images/report/1.JPG" alt="보고서 표지"></div>
+              <div class="book-slide"><img src="images/report/2.JPG" alt="보고서 2"></div>
+              <div class="book-slide"><img src="images/report/3.JPG" alt="보고서 3"></div>
+              <div class="book-slide"><img src="images/report/4.JPG" alt="보고서 4"></div>
+              <div class="book-slide"><img src="images/report/5.JPG" alt="보고서 5"></div>
+              <div class="book-slide"><img src="images/report/6.JPG" alt="보고서 6"></div>
+            </div>
+            <div class="report-book-pages"></div>
           </div>
+          <span class="report-page-count">최대 87페이지의 육안·장비점검 보고서</span>
         </div>
-        <div class="timeline-item fade-in">
-          <div class="timeline-dot">05</div>
-          <div class="timeline-content">
-            <p class="timeline-step">STEP 05</p>
-            <h4>보고서 작성</h4>
-            <p>하자 사진과 법령 근거를 포함한 상세 점검 보고서를 당일 제공합니다. 평균 42페이지 분량의 완성형 보고서입니다.</p>
+        <div class="fade-in-right">
+          <p class="section-subtitle">Sample Report</p>
+          <h2 class="section-title">점검 보고서를<br>미리 확인하세요</h2>
+          <p class="section-desc">사전점검 완료 당일 제공되는 종합보고서입니다. 하자의 정확한 위치·공종·법적 근거와 각종 장비점검 데이터를 체계적으로 제공합니다.</p>
+          <div class="report-contents">
+            <div class="report-content-item">
+              <span class="report-content-num">Part 1</span>
+              <span>공동주택 사전점검이란? — 법적 근거, 하자 정의, 이후 조치 기한</span>
+            </div>
+            <div class="report-content-item">
+              <span class="report-content-num">Part 2</span>
+              <span>하자의 이해 — 담보책임기간, 중대하자 정의, 실제 하자 사례</span>
+            </div>
+            <div class="report-content-item">
+              <span class="report-content-num">Part 3</span>
+              <span>점검 내용 — 육안점검, 공기질 측정, 바닥수평, 열화상 단열</span>
+            </div>
           </div>
-        </div>
-        <div class="timeline-item fade-in">
-          <div class="timeline-dot">06</div>
-          <div class="timeline-content">
-            <p class="timeline-step">STEP 06</p>
-            <h4>하자 접수 지원</h4>
-            <p>건설사 하자 접수 방법 안내 및 후속 처리를 지원합니다. 하자 보수 확인까지 책임지겠습니다.</p>
-          </div>
+          <a href="files/sample-report.pdf" target="_blank" class="btn-report-download">
+            <i class="fas fa-file-pdf"></i> 샘플 보고서 보기
+          </a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 요금 안내 -->
-  <section class="pricing-section section-padding">
+  <!-- 점검 실적 (간략본) -->
+  <section class="results-section section-padding">
     <div class="container">
-      <div class="pricing-header fade-in">
-        <p class="section-subtitle">Pricing</p>
-        <h2 class="section-title">요금 안내</h2>
-        <p class="section-desc">합리적인 가격으로 전문적인 사전점검 서비스를 제공합니다</p>
+      <div class="fade-in" style="text-align:center;margin-bottom:48px;">
+        <p class="section-subtitle">Results</p>
+        <h2 class="section-title">점검 실적</h2>
+        <p class="section-desc">제로하자가 직접 점검한 아파트 단지 실적입니다</p>
       </div>
-      <div class="pricing-grid">
-        <!-- 기본형 -->
-        <div class="pricing-card fade-in">
-          <h4>기본형</h4>
-          <p class="pricing-area">전용 84㎡ 이하</p>
-          <p class="pricing-amount">정가 350,000원</p>
-          <div class="pricing-main-amount">250,000<span style="font-size:18px;font-weight:400;">원</span></div>
-          <div class="pricing-features">
-            <div class="pricing-feature"><i class="fas fa-check"></i>육안 점검 (전 공간)</div>
-            <div class="pricing-feature"><i class="fas fa-check"></i>장비 점검 (수평기)</div>
-            <div class="pricing-feature"><i class="fas fa-check"></i>당일 보고서 발송</div>
-            <div class="pricing-feature"><i class="fas fa-check"></i>하자 접수 안내</div>
+      <div class="results-grid fade-in" id="inspResultsGrid"></div>
+      <div class="results-more-wrap fade-in" style="margin-top:40px;">
+        <button class="results-more-btn" onclick="navigateTo('main'); setTimeout(()=>{ const el=document.querySelector('.results-section'); if(el) el.scrollIntoView({behavior:'smooth'}); }, 300);">
+          전체 실적 보기 <i class="fas fa-chevron-right"></i>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq-section section-padding">
+    <div class="container">
+      <div class="faq-header fade-in">
+        <p class="section-subtitle">FAQ</p>
+        <h2 class="section-title">자주 묻는 질문</h2>
+        <p class="section-desc">사전점검에 대해 궁금한 점을 확인해보세요</p>
+      </div>
+      <div class="faq-list fade-in">
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            <span>사전점검은 언제 신청해야 하나요?</span>
+            <i class="fas fa-chevron-down"></i>
           </div>
-          <button class="btn-pricing" onclick="navigateTo('support')">상담 신청하기</button>
+          <div class="faq-answer"><div class="faq-answer-inner">사전점검일 1~2주 전에 예약하시는 것을 권장합니다. 사전점검대행 서비스는 인력기반의 서비스이기 때문에, 사전점검일 직전에는 예약이 불가능 할 수도 있습니다.</div></div>
         </div>
-        <!-- 표준형 (추천) -->
-        <div class="pricing-card featured fade-in">
-          <span class="pricing-badge">추천</span>
-          <h4>표준형</h4>
-          <p class="pricing-area">전용 85~135㎡</p>
-          <p class="pricing-amount">정가 500,000원</p>
-          <div class="pricing-main-amount">380,000<span style="font-size:18px;font-weight:400;">원</span></div>
-          <div class="pricing-features">
-            <div class="pricing-feature"><i class="fas fa-check"></i>육안 점검 (전 공간)</div>
-            <div class="pricing-feature"><i class="fas fa-check"></i>열화상 카메라 점검</div>
-            <div class="pricing-feature"><i class="fas fa-check"></i>바닥 수평 측정</div>
-            <div class="pricing-feature"><i class="fas fa-check"></i>공기질 측정 (HCHO·TVOC)</div>
-            <div class="pricing-feature"><i class="fas fa-check"></i>당일 보고서 발송</div>
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            <span>점검에 얼마나 시간이 걸리나요?</span>
+            <i class="fas fa-chevron-down"></i>
           </div>
-          <button class="btn-pricing" onclick="navigateTo('support')">상담 신청하기</button>
+          <div class="faq-answer"><div class="faq-answer-inner">전용면적에 따라 다르지만, 일반적으로 1시간 30분~2시간이 소요됩니다. 이 시간에는 사전미팅, 점검진행, 사후미팅까지 포함된 시간입니다.</div></div>
         </div>
-        <!-- 프리미엄 -->
-        <div class="pricing-card fade-in">
-          <h4>프리미엄</h4>
-          <p class="pricing-area">전용 136㎡ 이상</p>
-          <p class="pricing-amount">정가 700,000원</p>
-          <div class="pricing-main-amount">550,000<span style="font-size:18px;font-weight:400;">원</span></div>
-          <div class="pricing-features">
-            <div class="pricing-feature"><i class="fas fa-check"></i>육안 점검 (전 공간)</div>
-            <div class="pricing-feature"><i class="fas fa-check"></i>전 장비 점검</div>
-            <div class="pricing-feature"><i class="fas fa-check"></i>라돈·VOC 정밀 측정</div>
-            <div class="pricing-feature"><i class="fas fa-check"></i>해충 점검 포함</div>
-            <div class="pricing-feature"><i class="fas fa-check"></i>하자 접수 대행</div>
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            <span>점검 결과는 어떻게 받나요?</span>
+            <i class="fas fa-chevron-down"></i>
           </div>
-          <button class="btn-pricing" onclick="navigateTo('support')">상담 신청하기</button>
+          <div class="faq-answer"><div class="faq-answer-inner">점검 당일 상세 보고서를 전송해 드립니다. 평균 42페이지 분량의 보고서에 하자 사진, 법령 근거, 장비 점검에 대한 수치 데이터가 포함됩니다.</div></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            <span>건설사와의 하자 접수도 도와주나요?</span>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer"><div class="faq-answer-inner">네, 하자 접수 대행 서비스를 신청하시는 경우 건설사의 하자접수앱(혹은 웹)으로 진행되는 하자접수를 대행해드립니다.</div></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            <span>점검가가 자격증을 보유하고 있나요?</span>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer"><div class="faq-answer-inner">네, 제로하자의 모든 점검가는 건축, 실내건축, 주택관리 등의 자격증을 보유하고 있습니다.</div></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            <span>점검 취소/환불은 어떻게 하나요?</span>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer"><div class="faq-answer-inner">점검일 48시간 전까지 취소 요청 시 전액 환불됩니다. 48시간 이내 취소 시에는 환불 규정에 따라 처리됩니다.</div></div>
         </div>
       </div>
-      <p class="pricing-note fade-in">※ 상기 요금은 공동구매 할인이 적용된 가격이며, 단지 규모 및 점검 시기에 따라 달라질 수 있습니다.<br>※ 정확한 요금은 상담을 통해 확인해 주시기 바랍니다.</p>
+    </div>
+  </section>
+
+</div>
+
+<!-- ========================================
+     고객후기 페이지
+     ======================================== -->
+<div class="page-section" id="page-reviews">
+
+  <section class="page-hero" style="height:36vh; min-height:240px;">
+    <div class="page-hero-bg" style="background-image: url('images/menu/ins_header.jpg');"></div>
+    <div class="page-hero-content">
+      <h2>고객후기</h2>
+      <div class="breadcrumb">
+        <a onclick="navigateTo('main')">홈</a> &nbsp;/&nbsp; <span>고객후기</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-padding" style="background:var(--off-white);">
+    <div class="container">
+      <div class="fade-in" style="text-align:center;margin-bottom:48px;">
+        <p class="section-subtitle">Reviews</p>
+        <h2 class="section-title">고객후기</h2>
+        <p class="section-desc">실제 고객님들의 생생한 점검 후기입니다</p>
+      </div>
+      <div class="review-grid fade-in">
+        <a class="review-card" href="https://blog.naver.com/ahyun35/223493572413" target="_blank" rel="noopener">
+          <div class="review-card-thumb"><img src="images/hoogi/1.JPG" alt="선화동 하늘채 퐁퐁님의 후기" loading="lazy"></div>
+          <div class="review-card-body">
+            <span class="review-tag">#네이버 블로그</span>
+            <p class="review-title">선화동 하늘채 퐁퐁님의 후기</p>
+            <p class="review-comment">"상위1% 인플루언서의 선택"</p>
+          </div>
+          <div class="review-card-footer">
+            <span class="review-source"><i class="fas fa-check-circle"></i> 네이버 블로그</span>
+            <span class="review-more">후기 보기 <i class="fas fa-arrow-right"></i></span>
+          </div>
+        </a>
+        <a class="review-card" href="https://blog.naver.com/saytostay/224152914786" target="_blank" rel="noopener">
+          <div class="review-card-thumb"><img src="images/hoogi/2.JPG" alt="제로하자 내돈내산 후기" loading="lazy"></div>
+          <div class="review-card-body">
+            <span class="review-tag">#네이버 블로그</span>
+            <p class="review-title">제로하자 내돈내산 후기</p>
+            <p class="review-comment">"전문가의 시각, 제로하"</p>
+          </div>
+          <div class="review-card-footer">
+            <span class="review-source"><i class="fas fa-check-circle"></i> 네이버 블로그</span>
+            <span class="review-more">후기 보기 <i class="fas fa-arrow-right"></i></span>
+          </div>
+        </a>
+        <a class="review-card" href="https://blog.naver.com/ddberry/223653675451" target="_blank" rel="noopener">
+          <div class="review-card-thumb"><img src="images/hoogi/3.JPG" alt="안경언니 하늘채리버뷰 후기" loading="lazy"></div>
+          <div class="review-card-body">
+            <span class="review-tag">#네이버 블로그</span>
+            <p class="review-title">안경언니 하늘채리버뷰 후기</p>
+            <p class="review-comment">"대전업체라 더욱 신뢰가 가"</p>
+          </div>
+          <div class="review-card-footer">
+            <span class="review-source"><i class="fas fa-check-circle"></i> 네이버 블로그</span>
+            <span class="review-more">후기 보기 <i class="fas fa-arrow-right"></i></span>
+          </div>
+        </a>
+        <a class="review-card" href="https://blog.naver.com/re-re-re/223809468549" target="_blank" rel="noopener">
+          <div class="review-card-thumb"><img src="images/hoogi/4.JPG" alt="찹찹님 후기" loading="lazy"></div>
+          <div class="review-card-body">
+            <span class="review-tag">#네이버 블로그</span>
+            <p class="review-title">찹찹님 후기</p>
+            <p class="review-comment">"실무경험이 풍부한 업체"</p>
+          </div>
+          <div class="review-card-footer">
+            <span class="review-source"><i class="fas fa-check-circle"></i> 네이버 블로그</span>
+            <span class="review-more">후기 보기 <i class="fas fa-arrow-right"></i></span>
+          </div>
+        </a>
+        <a class="review-card" href="https://blog.naver.com/kdkdud04/223653794704" target="_blank" rel="noopener">
+          <div class="review-card-thumb"><img src="images/hoogi/5.JPG" alt="솜뭉치맘 후기" loading="lazy"></div>
+          <div class="review-card-body">
+            <span class="review-tag">#네이버 블로그</span>
+            <p class="review-title">솜뭉치맘 후기</p>
+            <p class="review-comment">"상담부터 친절 그 잡채였어요!"</p>
+          </div>
+          <div class="review-card-footer">
+            <span class="review-source"><i class="fas fa-check-circle"></i> 네이버 블로그</span>
+            <span class="review-more">후기 보기 <i class="fas fa-arrow-right"></i></span>
+          </div>
+        </a>
+        <a class="review-card" href="https://blog.naver.com/ohjinhaa/223302251401" target="_blank" rel="noopener">
+          <div class="review-card-thumb"><img src="images/hoogi/6.JPG" alt="제로하자 내돈내산 후기" loading="lazy"></div>
+          <div class="review-card-body">
+            <span class="review-tag">#네이버 블로그</span>
+            <p class="review-title">제로하자 내돈내산 후기</p>
+            <p class="review-comment">"전문가의 시선!!"</p>
+          </div>
+          <div class="review-card-footer">
+            <span class="review-source"><i class="fas fa-check-circle"></i> 네이버 블로그</span>
+            <span class="review-more">후기 보기 <i class="fas fa-arrow-right"></i></span>
+          </div>
+        </a>
+        <a class="review-card" href="https://blog.naver.com/wpffkdks1017/223704675425" target="_blank" rel="noopener">
+          <div class="review-card-thumb"><img src="images/hoogi/7.JPG" alt="내돈내산 제로하자 후기" loading="lazy"></div>
+          <div class="review-card-body">
+            <span class="review-tag">#네이버 블로그</span>
+            <p class="review-title">내돈내산 제로하자 후기</p>
+            <p class="review-comment">"깐깐한 내가 만족한 업체"</p>
+          </div>
+          <div class="review-card-footer">
+            <span class="review-source"><i class="fas fa-check-circle"></i> 네이버 블로그</span>
+            <span class="review-more">후기 보기 <i class="fas fa-arrow-right"></i></span>
+          </div>
+        </a>
+        <a class="review-card" href="https://blog.naver.com/nsy3445/223738090915" target="_blank" rel="noopener">
+          <div class="review-card-thumb"><img src="images/hoogi/8.JPG" alt="신축아파트 제로하자 사전점검 및 셀프 하자접수" loading="lazy"></div>
+          <div class="review-card-body">
+            <span class="review-tag">#네이버 블로그</span>
+            <p class="review-title">신축아파트 제로하자 사전점검 및 셀프 하자접수</p>
+            <p class="review-comment">"상세한 설명, 체계적이에요"</p>
+          </div>
+          <div class="review-card-footer">
+            <span class="review-source"><i class="fas fa-check-circle"></i> 네이버 블로그</span>
+            <span class="review-more">후기 보기 <i class="fas fa-arrow-right"></i></span>
+          </div>
+        </a>
+      </div>
     </div>
   </section>
 
@@ -2492,7 +4137,7 @@ ul, ol {
   <section class="page-hero" style="height:40vh; min-height:280px;">
     <div class="page-hero-bg" style="background-image: url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=1600');"></div>
     <div class="page-hero-content">
-      <h1>고객지원</h1>
+      <h2>고객지원</h2>
       <div class="breadcrumb">
         <a onclick="navigateTo('main')">홈</a> &nbsp;/&nbsp; <span>고객지원</span>
       </div>
@@ -2508,40 +4153,71 @@ ul, ol {
           <p class="section-subtitle">Consultation</p>
           <h2 class="section-title">무료 상담 신청</h2>
           <p class="section-desc" style="margin-bottom:32px;">궁금한 점이 있으시면 언제든 문의해 주세요. 전문 상담원이 친절하게 안내해 드립니다.</p>
-          <form id="consultForm" onsubmit="handleFormSubmit(event)">
+          <form id="consultForm" onsubmit="handleFormSubmit(event)" action="https://formsubmit.co/geman22@naver.com" method="POST">
+            <input type="hidden" name="_subject" value="[제로하자] 무료상담 신청">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_next" value="https://zerohaza.co.kr">
             <div class="form-group">
               <label>이름 <span class="required">*</span></label>
-              <input type="text" class="form-input" id="formName" placeholder="이름을 입력해주세요" required>
+              <input type="text" class="form-input" id="formName" name="이름" placeholder="이름을 입력해주세요" required>
               <p class="form-error" id="nameError">이름을 입력해주세요</p>
             </div>
             <div class="form-group">
               <label>연락처 <span class="required">*</span></label>
-              <input type="tel" class="form-input" id="formPhone" placeholder="010-0000-0000" required>
+              <input type="tel" class="form-input" id="formPhone" name="연락처" placeholder="010-0000-0000" required>
               <p class="form-error" id="phoneError">올바른 연락처를 입력해주세요</p>
             </div>
-            <div class="form-group">
+            <div class="form-group" style="position:relative;">
               <label>입주 예정 단지명 <span class="required">*</span></label>
-              <input type="text" class="form-input" id="formApart" placeholder="아파트 단지명을 입력해주세요" required>
+              <input type="text" class="form-input" id="formApart" name="단지명" placeholder="단지명을 입력하여 검색하세요" required autocomplete="off">
+              <div id="apartSuggest" style="display:none;position:absolute;top:100%;left:0;right:0;background:#fff;border:1.5px solid var(--gold);border-top:none;border-radius:0 0 8px 8px;max-height:220px;overflow-y:auto;z-index:999;box-shadow:0 8px 24px rgba(0,0,0,0.1);"></div>
               <p class="form-error" id="apartError">단지명을 입력해주세요</p>
             </div>
             <div class="form-group">
+              <label>지역 선택 <span style="font-size:12px;font-weight:400;color:var(--mid-gray);">(선택사항 — 지역을 먼저 선택하면 검색이 쉬워집니다)</span></label>
+              <select class="form-select" id="formRegion">
+                <option value="">전체 지역</option>
+                <option value="강원">강원</option>
+                <option value="경기">경기</option>
+                <option value="경남">경남</option>
+                <option value="경북">경북</option>
+                <option value="광주">광주</option>
+                <option value="대구">대구</option>
+                <option value="대전">대전</option>
+                <option value="부산">부산</option>
+                <option value="서울">서울</option>
+                <option value="세종">세종</option>
+                <option value="울산">울산</option>
+                <option value="인천">인천</option>
+                <option value="전남">전남</option>
+                <option value="전북">전북</option>
+                <option value="제주">제주</option>
+                <option value="충남">충남</option>
+                <option value="충북">충북</option>
+              </select>
+            </div>
+            <div class="form-group">
               <label>전용면적</label>
-              <select class="form-select" id="formArea">
+              <select class="form-select" id="formArea" name="전용면적">
                 <option value="">선택해주세요</option>
+                <option value="49">49㎡ 이하</option>
                 <option value="59">59㎡</option>
+                <option value="74">74㎡</option>
                 <option value="84">84㎡</option>
+                <option value="99">99㎡</option>
                 <option value="110">110㎡</option>
-                <option value="135">135㎡</option>
+                <option value="140">140㎡ 이상</option>
                 <option value="etc">기타</option>
               </select>
             </div>
             <div class="form-group">
               <label>점검 희망일</label>
-              <input type="date" class="form-input" id="formDate">
+              <input type="date" class="form-input" id="formDate" name="점검희망일">
             </div>
             <div class="form-group">
               <label>문의 내용</label>
-              <textarea class="form-textarea" id="formMessage" placeholder="궁금한 사항을 자유롭게 작성해주세요"></textarea>
+              <textarea class="form-textarea" id="formMessage" name="문의내용" placeholder="궁금한 사항을 자유롭게 작성해주세요"></textarea>
             </div>
             <div class="form-checkbox">
               <input type="checkbox" id="formAgree" required>
@@ -2557,15 +4233,15 @@ ul, ol {
               <div class="contact-card-icon"><i class="fas fa-phone"></i></div>
               <div>
                 <h4>전화 상담</h4>
-                <p><a href="tel:00000000" style="font-size:20px; font-weight:700;">0000-0000</a></p>
-                <p>평일 09:00 ~ 18:00</p>
+                <p><a href="tel:1533-7033" style="font-size:20px; font-weight:700;">1533-7033</a></p>
+                <p>평일 10:00 ~ 18:00</p>
               </div>
             </div>
             <div class="contact-card">
               <div class="contact-card-icon"><i class="fas fa-envelope"></i></div>
               <div>
                 <h4>이메일</h4>
-                <p><a href="mailto:info@zerohaja.com">info@zerohaja.com</a></p>
+                <p><a href="mailto:geman22@naver.com">geman22@naver.com</a></p>
                 <p>24시간 접수 가능</p>
               </div>
             </div>
@@ -2578,9 +4254,16 @@ ul, ol {
               </div>
             </div>
             <div class="map-placeholder">
-              <div style="text-align:center;">
-                <i class="fas fa-map-marker-alt" style="font-size:32px;color:var(--gold);margin-bottom:12px;display:block;"></i>
-                <p>대전광역시 유성구 대학로 99<br>제로하자 본사</p>
+              <iframe
+                src="https://maps.google.com/maps?q=대전광역시+동구+한밭대로+1297&output=embed&hl=ko&z=16"
+                allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+              </iframe>
+              <div class="map-buttons">
+                <a class="map-btn map-btn-naver"
+                   href="https://naver.me/xAAuX69C"
+                   target="_blank" rel="noopener">
+                  <i class="fas fa-map-marker-alt"></i> 네이버지도
+                </a>
               </div>
             </div>
           </div>
@@ -2589,30 +4272,6 @@ ul, ol {
     </div>
   </section>
 
-  <!-- 점검 실적 -->
-  <section class="results-section section-padding">
-    <div class="container">
-      <div class="fade-in" style="text-align:center;margin-bottom:48px;">
-        <p class="section-subtitle">Results</p>
-        <h2 class="section-title">점검 실적</h2>
-        <p class="section-desc">제로하자가 직접 점검한 아파트 단지 실적입니다</p>
-      </div>
-      <div class="results-filter fade-in" id="resultsFilter">
-        <button class="filter-btn active" data-region="전체"  onclick="filterResults(this,'전체')">전체</button>
-        <button class="filter-btn"        data-region="대전"  onclick="filterResults(this,'대전')">대전</button>
-        <button class="filter-btn"        data-region="충청"  onclick="filterResults(this,'충청')">충청</button>
-        <button class="filter-btn"        data-region="세종"  onclick="filterResults(this,'세종')">세종</button>
-        <button class="filter-btn"        data-region="수도권" onclick="filterResults(this,'수도권')">수도권</button>
-        <button class="filter-btn"        data-region="기타"  onclick="filterResults(this,'기타')">기타</button>
-      </div>
-      <div class="results-grid fade-in" id="resultsGrid"></div>
-      <div class="results-more-wrap fade-in">
-        <button class="results-more-btn" id="moreBtn" onclick="showMoreResults()">
-          더보기 <i class="fas fa-chevron-down"></i>
-        </button>
-      </div>
-    </div>
-  </section>
 
   <!-- FAQ (Accordion) -->
   <section class="faq-section section-padding">
@@ -2628,39 +4287,39 @@ ul, ol {
             <span>사전점검은 언제 신청해야 하나요?</span>
             <i class="fas fa-chevron-down"></i>
           </div>
-          <div class="faq-answer"><div class="faq-answer-inner">입주 지정일 1~2주 전에 예약하시는 것을 권장합니다. 사전점검 기간 중 초반에 점검을 받으시면 하자 보수 요청 시간을 충분히 확보할 수 있습니다.</div></div>
+          <div class="faq-answer"><div class="faq-answer-inner">사전점검일 1~2주 전에 예약하시는 것을 권장합니다. 사전점검대행 서비스는 인력기반의 서비스이기 때문에, 사전점검일 직전에는 예약이 불가능 할 수도 있습니다.</div></div>
         </div>
         <div class="faq-item">
           <div class="faq-question" onclick="toggleFaq(this)">
             <span>점검에 얼마나 시간이 걸리나요?</span>
             <i class="fas fa-chevron-down"></i>
           </div>
-          <div class="faq-answer"><div class="faq-answer-inner">전용면적에 따라 다르지만, 일반적으로 59㎡ 기준 약 2시간, 84㎡ 기준 약 2.5~3시간, 110㎡ 이상은 3~4시간 정도 소요됩니다.</div></div>
+          <div class="faq-answer"><div class="faq-answer-inner">전용면적에 따라 다르지만, 일반적으로 1시간 30분~2시간이 소요됩니다. 이 시간에는 사전미팅, 점검진행, 사후미팅까지 포함된 시간입니다.</div></div>
         </div>
         <div class="faq-item">
           <div class="faq-question" onclick="toggleFaq(this)">
             <span>점검 결과는 어떻게 받나요?</span>
             <i class="fas fa-chevron-down"></i>
           </div>
-          <div class="faq-answer"><div class="faq-answer-inner">점검 당일 앱 또는 이메일로 상세 보고서를 전송해 드립니다. 평균 42페이지 분량의 보고서에 하자 사진, 법령 근거, 수치 데이터가 포함됩니다.</div></div>
+          <div class="faq-answer"><div class="faq-answer-inner">점검 당일 상세 보고서를 전송해 드립니다. 평균 42페이지 분량의 보고서에 하자 사진, 법령 근거, 장비 점검에 대한 수치 데이터가 포함됩니다.</div></div>
         </div>
         <div class="faq-item">
           <div class="faq-question" onclick="toggleFaq(this)">
             <span>건설사와의 하자 접수도 도와주나요?</span>
             <i class="fas fa-chevron-down"></i>
           </div>
-          <div class="faq-answer"><div class="faq-answer-inner">네, 하자 접수 방법 안내 및 서류 작성을 지원해 드립니다. 프리미엄 상품의 경우 하자 접수 대행 서비스까지 포함되어 있습니다.</div></div>
+          <div class="faq-answer"><div class="faq-answer-inner">네, 하자 접수 대행 서비스를 신청하시는 경우 건설사의 하자접수앱(혹은 웹)으로 진행되는 하자접수를 대행해드립니다..</div></div>
         </div>
         <div class="faq-item">
           <div class="faq-question" onclick="toggleFaq(this)">
             <span>점검가가 자격증을 보유하고 있나요?</span>
             <i class="fas fa-chevron-down"></i>
           </div>
-          <div class="faq-answer"><div class="faq-answer-inner">네, 제로하자의 모든 점검가는 건축기사 자격증을 보유하고 있습니다. 전문적인 판정 기준에 따라 하자를 정확하게 식별합니다.</div></div>
+          <div class="faq-answer"><div class="faq-answer-inner">네, 제로하자의 모든 점검가는 건축,실내건축,주택관리 등의 자격증을 보유하고 있습니다. .</div></div>
         </div>
         <div class="faq-item">
           <div class="faq-question" onclick="toggleFaq(this)">
-            <span>혼자 가도 되나요?</span>
+            <span>사전점검, 저 혼자 가도 되나요?</span>
             <i class="fas fa-chevron-down"></i>
           </div>
           <div class="faq-answer"><div class="faq-answer-inner">네, 입주자 본인 또는 대리인 동반 모두 가능합니다. 다만, 입주자 확인을 위한 신분증을 지참해 주시기 바랍니다.</div></div>
@@ -2684,7 +4343,7 @@ ul, ol {
             <span>점검 후 하자가 추가 발견되면요?</span>
             <i class="fas fa-chevron-down"></i>
           </div>
-          <div class="faq-answer"><div class="faq-answer-inner">제로하자의 중대하자 보증 제도가 적용됩니다. 점검 시 발견하지 못한 중대하자의 경우, 환불 보증 제도에 따라 처리해 드립니다.</div></div>
+          <div class="faq-answer"><div class="faq-answer-inner"> 사전점검 서비스는 인력 기반의 서비스이다보니 작은 흠집이나 오염 등은 누락될 수 있습니다. 하지만 중대하자의 경우 100% 적출을 목표로 하고 있으므로 점검 시 발견하지 못한 중대하자의 경우, 환불 보증 제도에 따라 처리해 드립니다.</div></div>
         </div>
         <div class="faq-item">
           <div class="faq-question" onclick="toggleFaq(this)">
@@ -2700,6 +4359,73 @@ ul, ol {
 </div>
 
 <!-- ========================================
+     문의현황 페이지
+     ======================================== -->
+<div class="page-section" id="page-inquiry">
+
+  <section class="inquiry-hero">
+    <div class="container">
+      <h2 class="inquiry-hero-title">상담 현황</h2>
+      <p class="inquiry-hero-desc">제로하자는 풍부한 현장경험을 바탕으로 전국단위의 커버리지를 제공하고 있습니다.</p>
+    </div>
+  </section>
+
+  <!-- 통계 카운터 -->
+  <section class="inquiry-stats">
+    <div class="container">
+      <div class="inquiry-stats-grid">
+        <div class="inquiry-stat-card">
+          <div class="inquiry-stat-icon"><i class="fas fa-comment-dots"></i></div>
+          <div>
+            <div class="inquiry-stat-label">상담신청</div>
+            <div class="inquiry-stat-num" id="stat-applied">0<span class="unit">건</span></div>
+          </div>
+        </div>
+        <div class="inquiry-stat-card">
+          <div class="inquiry-stat-icon"><i class="fas fa-check-circle"></i></div>
+          <div>
+            <div class="inquiry-stat-label">상담완료</div>
+            <div class="inquiry-stat-num" id="stat-consulted">0<span class="unit">건</span></div>
+          </div>
+        </div>
+        <div class="inquiry-stat-card">
+          <div class="inquiry-stat-icon"><i class="fas fa-calendar-check"></i></div>
+          <div>
+            <div class="inquiry-stat-label">예약완료</div>
+            <div class="inquiry-stat-num" id="stat-reserved">0<span class="unit">건</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 문의 목록 -->
+  <section class="inquiry-list-section">
+    <div class="container">
+      <div class="inquiry-list-header">
+        <div class="inquiry-list-title">상담 진행현황</div>
+        <button class="btn-inquiry-primary" onclick="navigateTo('support')">상담신청</button>
+      </div>
+      <table class="inquiry-table">
+        <thead>
+          <tr>
+            <th style="width:60px">번호</th>
+            <th style="width:90px">서비스</th>
+            <th class="col-apt">아파트명</th>
+            <th style="width:80px">이름</th>
+            <th style="width:110px">날짜</th>
+            <th style="width:90px">상태</th>
+          </tr>
+        </thead>
+        <tbody id="inquiry-tbody"></tbody>
+      </table>
+      <div id="inquiry-pagination" class="inq-pagination"></div>
+    </div>
+  </section>
+
+</div>
+
+<!-- ========================================
      공통 푸터 (Footer)
      ======================================== -->
 <footer class="footer">
@@ -2707,13 +4433,12 @@ ul, ol {
     <div class="footer-grid">
       <div class="footer-brand">
         <div class="logo" onclick="navigateTo('main')">
-          <span class="logo-main"><span class="zero">ZERO</span><span class="haja">HAJA</span></span>
-          <span class="logo-sub">제로하자 사전점검</span>
+          <img class="logo-img" src="logo_w.png" alt="제로하자" width="180" height="65">
         </div>
         <p>건축물 하자 사전점검 전문업체<br>법적 근거에 기반한 정확한 하자 확인</p>
         <div class="footer-social">
-          <a href="#" aria-label="카카오톡"><i class="fab fa-comment"></i></a>
-          <a href="#" aria-label="인스타그램"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="카카오톡"><svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor"><path d="M12 3C6.477 3 2 6.582 2 11c0 2.731 1.561 5.138 3.926 6.618L4.9 21.5l4.264-2.303A11.8 11.8 0 0012 19.5c5.523 0 10-3.806 10-8.5S17.523 3 12 3zm-1.25 10.75l-2.5-2.75 6.5-3.75-4 6.5z"/></svg></a>
+          <a href="https://www.instagram.com/zerohaza/" target="_blank" rel="noopener" aria-label="인스타그램"><i class="fab fa-instagram"></i></a>
           <a href="#" aria-label="유튜브"><i class="fab fa-youtube"></i></a>
         </div>
       </div>
@@ -2725,27 +4450,32 @@ ul, ol {
         <a onclick="navigateTo('main')">파트너사</a>
       </div>
       <div class="footer-col">
-        <h4>서비스</h4>
-        <a onclick="navigateTo('inspection')">사전점검 안내</a>
-        <a onclick="navigateTo('inspection')">점검 절차</a>
-        <a onclick="navigateTo('inspection')">요금 안내</a>
-        <a onclick="navigateTo('inspection')">점검 항목</a>
+        <h4>사전점검</h4>
+        <a onclick="navigateTo('inspection')">사전점검이란</a>
+        <a onclick="navigateTo('inspection')">주요 하자유형</a>
+        <a onclick="navigateTo('inspection')">점검 실적</a>
+        <a onclick="navigateTo('inspection')">FAQ</a>
       </div>
       <div class="footer-col">
         <h4>고객지원</h4>
-        <a onclick="navigateTo('support')">상담 신청</a>
-        <a onclick="navigateTo('support')">FAQ</a>
-        <a onclick="navigateTo('support')">점검 현황</a>
+        <a onclick="navigateTo('inquiry')">무료상담 신청</a>
+        <a onclick="navigateTo('support')">오시는 길</a>
+      </div>
+      <div class="footer-col">
+        <h4>고객후기</h4>
+        <a onclick="navigateTo('reviews')">고객후기</a>
       </div>
     </div>
     <div class="footer-bottom">
       <div>
-        <p>© 2025 ZEROHAJA. All Rights Reserved.</p>
-        <p class="footer-contact-info">Tel: 0000-0000 &nbsp;|&nbsp; E-mail: info@zerohaja.com &nbsp;|&nbsp; 평일 09:00 ~ 18:00 (토·일·공휴일 휴무)</p>
+        <p class="footer-contact-info">주식회사 알컴퍼니 &nbsp;|&nbsp; 대표이사 이승민 &nbsp;|&nbsp; 사업자등록번호 834-87-02421 &nbsp;|&nbsp; 대전광역시 동구 한밭대로 1297, 202호</p>
+        <p class="footer-contact-info" style="margin-top:6px;">Tel: 1533-7033 &nbsp;|&nbsp; E-mail: info@zerohaja.com &nbsp;|&nbsp; 평일 10:00 ~ 18:00 (토·일·공휴일 휴무)</p>
+        <p style="margin-top:6px;">©Alcompany ltd. All Rights Reserved.</p>
       </div>
       <div class="footer-bottom-links">
-        <a href="#">개인정보처리방침</a>
-        <a href="#">이용약관</a>
+        <a onclick="openPrivacyModal()" style="cursor:pointer;">개인정보처리방침</a>
+        <a onclick="openTermsModal()" style="cursor:pointer;">이용약관</a>
+        <a onclick="openCookieModal()" style="cursor:pointer;">쿠키 정책</a>
       </div>
     </div>
   </div>
@@ -2754,10 +4484,276 @@ ul, ol {
 <!-- 토스트 알림 -->
 <div class="toast" id="toast"></div>
 
+<!-- 상담신청 완료 모달 -->
+<div class="submit-modal-overlay" id="submitModal" onclick="closeSubmitModal()">
+  <div class="submit-modal-box" onclick="event.stopPropagation()">
+    <div class="submit-modal-icon">✓</div>
+    <h3 class="submit-modal-title">신청이 완료되었습니다!</h3>
+    <p class="submit-modal-desc">빠른 시일 내에 전화 드리겠습니다.<br>운영시간: 평일 09:00 ~ 18:00</p>
+    <button class="submit-modal-btn" onclick="closeSubmitModal()">확인</button>
+  </div>
+</div>
+
+<!-- 모바일 플로팅 상담 버튼 -->
+<button class="float-consult-btn" id="floatConsultBtn" onclick="openFloatConsult()">
+  <i class="fas fa-clipboard-check"></i>
+  <span>무료상담</span>
+</button>
+
+<!-- 모바일 플로팅 상담 모달 -->
+<div class="float-consult-overlay" id="floatConsultModal">
+  <div class="float-consult-panel">
+    <div class="float-consult-header">
+      <h3>무료 상담 신청</h3>
+      <button class="cookie-modal-close" onclick="closeFloatConsult()">&times;</button>
+    </div>
+    <div class="float-consult-body">
+      <form id="floatConsultForm" onsubmit="handleFloatConsultSubmit(event)">
+        <input type="hidden" name="_subject" value="[제로하자] 무료상담 신청">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="table">
+        <div class="form-group">
+          <label>이름 <span class="required">*</span></label>
+          <input type="text" class="form-input" id="floatName" name="이름" placeholder="이름을 입력해주세요" required>
+        </div>
+        <div class="form-group">
+          <label>연락처 <span class="required">*</span></label>
+          <input type="tel" class="form-input" id="floatPhone" name="연락처" placeholder="010-0000-0000" required>
+        </div>
+        <div class="form-group">
+          <label>입주 예정 단지명 <span class="required">*</span></label>
+          <input type="text" class="form-input" id="floatApart" name="단지명" placeholder="단지명을 입력해주세요" required>
+        </div>
+        <div class="form-group">
+          <label>지역 선택</label>
+          <select class="form-select" name="지역">
+            <option value="">전체 지역</option>
+            <option value="강원">강원</option>
+            <option value="경기">경기</option>
+            <option value="경남">경남</option>
+            <option value="경북">경북</option>
+            <option value="광주">광주</option>
+            <option value="대구">대구</option>
+            <option value="대전">대전</option>
+            <option value="부산">부산</option>
+            <option value="서울">서울</option>
+            <option value="세종">세종</option>
+            <option value="울산">울산</option>
+            <option value="인천">인천</option>
+            <option value="전남">전남</option>
+            <option value="전북">전북</option>
+            <option value="제주">제주</option>
+            <option value="충남">충남</option>
+            <option value="충북">충북</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>전용면적</label>
+          <select class="form-select" name="전용면적">
+            <option value="">선택해주세요</option>
+            <option value="49">49㎡ 이하</option>
+            <option value="59">59㎡</option>
+            <option value="74">74㎡</option>
+            <option value="84">84㎡</option>
+            <option value="99">99㎡</option>
+            <option value="110">110㎡</option>
+            <option value="140">140㎡ 이상</option>
+            <option value="etc">기타</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>점검 희망일</label>
+          <input type="date" class="form-input" name="점검희망일">
+        </div>
+        <div class="form-group">
+          <label>문의 내용</label>
+          <textarea class="form-textarea" name="문의내용" placeholder="궁금한 사항을 자유롭게 작성해주세요"></textarea>
+        </div>
+        <div class="form-checkbox">
+          <input type="checkbox" id="floatAgree" required>
+          <label for="floatAgree">개인정보 수집 및 이용에 동의합니다.</label>
+        </div>
+        <button type="submit" class="btn-submit" id="floatSubmitBtn">상담 신청하기</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- 개인정보처리방침 모달 -->
+<div class="cookie-modal-overlay" id="privacyModal" onclick="closePrivacyModal(event)">
+  <div class="cookie-modal" style="max-width:640px;">
+    <div class="cookie-modal-header">
+      <h3>개인정보처리방침</h3>
+      <button class="cookie-modal-close" onclick="closePrivacyModal()">&times;</button>
+    </div>
+    <div class="cookie-modal-body">
+      <p class="cookie-updated">시행일: 2025년 1월 1일</p>
+
+      <p>제로하자(이하 "회사")는 「개인정보 보호법」 제30조에 따라 정보주체에게 개인정보 처리에 관한 절차와 기준을 안내하고, 이와 관련된 고충을 신속하고 원활하게 처리할 수 있도록 다음과 같이 개인정보 처리방침을 수립·공개합니다.</p>
+
+      <h4>제1조 개인정보의 처리목적</h4>
+      <p>회사는 다음의 목적을 위하여 개인정보를 처리합니다. 처리하고 있는 개인정보는 다음의 목적 이외의 용도로는 이용되지 않으며, 이용 목적이 변경되는 경우에는 「개인정보 보호법」 제18조에 따라 별도의 동의를 받는 등 필요한 조치를 이행할 예정입니다.</p>
+      <table class="cookie-table">
+        <thead><tr><th>카테고리</th><th>처리목적</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>상담 신청</td>
+            <td>
+              - 아파트 사전점검 서비스에 대한 문의사항 접수<br>
+              - 이용자 식별 및 인증<br>
+              - 서비스 부정 이용 기록 및 방지<br>
+              - 상담 신청 고객 관리 및 요청사항 접수·대응
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h4>제2조 수집하는 개인정보 항목</h4>
+      <table class="cookie-table">
+        <thead><tr><th>카테고리</th><th>수집 항목</th></tr></thead>
+        <tbody>
+          <tr><td>사전점검 상담 신청</td><td>이름, 연락처, 입주예정 아파트명, 서비스 유형, 문의내용</td></tr>
+        </tbody>
+      </table>
+
+      <h4>제3조 개인정보의 처리 및 보유 기간</h4>
+      <p>회사는 법령에 따른 개인정보 보유·이용기간 또는 정보주체로부터 수집 시 동의 받은 보유·이용기간 내에서 개인정보를 처리·보유합니다.</p>
+      <table class="cookie-table">
+        <thead><tr><th>카테고리</th><th>보유 기간</th></tr></thead>
+        <tbody>
+          <tr><td>사전점검 상담 신청</td><td>문의일로부터 3년 (소비자 불만 및 분쟁처리 기록)<br>단, 고객이 직접 삭제·탈퇴 요청 시 1달 이내 처리</td></tr>
+        </tbody>
+      </table>
+      <p>관계법령에 의해 보존이 필요한 경우 아래 기간 동안 보관합니다.</p>
+      <table class="cookie-table">
+        <thead><tr><th>항목</th><th>보존목적</th><th>기간</th></tr></thead>
+        <tbody>
+          <tr><td>계약·청약철회 기록</td><td>전자상거래 등에서의 소비자보호에 관한 법률</td><td>5년</td></tr>
+          <tr><td>소비자 불만·분쟁처리 기록</td><td>전자상거래 등에서의 소비자보호에 관한 법률</td><td>3년</td></tr>
+          <tr><td>웹사이트 방문 기록</td><td>통신비밀보호법</td><td>3개월</td></tr>
+        </tbody>
+      </table>
+
+      <h4>제4조 개인정보의 파기</h4>
+      <p>회사는 개인정보 보유기간 경과, 처리목적 달성 시 지체 없이 파기합니다. 전자적 파일은 재생 불가 방법으로, 종이 문서는 분쇄·소각하여 파기합니다.</p>
+
+      <h4>제5조 개인정보의 제3자 제공</h4>
+      <p>회사는 이용자의 개인정보를 원칙적으로 외부에 제공하지 않습니다. 다만, 법령 규정에 의거하거나 수사기관의 요구가 있는 경우는 예외입니다.</p>
+
+      <h4>제6조 정보주체의 권리·의무 및 행사 방법</h4>
+      <p>정보주체는 회사에 대해 언제든지 개인정보 열람, 정정, 삭제, 처리정지 요구 등의 권리를 행사할 수 있습니다. 권리 행사는 이메일 또는 전화로 요청하실 수 있으며, 회사는 지체 없이 조치합니다.</p>
+
+      <h4>제7조 개인정보의 안전성 확보조치</h4>
+      <ul>
+        <li><strong>관리적 조치</strong>: 내부관리계획 수립, 개인정보 보호책임자 지정, 담당자 교육</li>
+        <li><strong>기술적 조치</strong>: 접근 권한 관리, 개인정보 암호화, 보안 프로그램 설치·갱신</li>
+        <li><strong>물리적 조치</strong>: 전산실 및 업무 공간 출입 통제</li>
+      </ul>
+
+      <h4>제8조 개인정보 보호책임자</h4>
+      <ul>
+        <li><strong>이메일</strong>: info@zerohaja.com</li>
+        <li><strong>전화</strong>: 1533-7033</li>
+      </ul>
+
+      <h4>제9조 권익침해 구제방법</h4>
+      <p>개인정보 침해로 인한 구제가 필요한 경우 아래 기관에 문의하실 수 있습니다.</p>
+      <ul>
+        <li>개인정보분쟁조정위원회: 1833-6972 (www.kopico.go.kr)</li>
+        <li>개인정보침해신고센터: 118 (privacy.kisa.or.kr)</li>
+        <li>대검찰청: 1301 (www.spo.go.kr)</li>
+        <li>경찰청: 182 (ecrm.cyber.go.kr)</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- 이용약관 모달 -->
+<div class="cookie-modal-overlay" id="termsModal" onclick="closeTermsModal(event)">
+  <div class="cookie-modal">
+    <div class="cookie-modal-header">
+      <h3>이용약관</h3>
+      <button class="cookie-modal-close" onclick="closeTermsModal()">&times;</button>
+    </div>
+    <div class="cookie-modal-body">
+      <p class="cookie-updated">최종 업데이트: 2025년 1월</p>
+
+      <h4>제1조 (목적)</h4>
+      <p>본 약관은 제로하자(이하 "회사")가 운영하는 웹사이트(zerohaja.co.kr)에서 제공하는 서비스 이용에 관한 조건 및 절차, 회사와 이용자 간의 권리·의무 및 책임사항을 규정함을 목적으로 합니다.</p>
+
+      <h4>제2조 (서비스 내용)</h4>
+      <p>회사는 다음과 같은 서비스를 제공합니다.</p>
+      <ul>
+        <li>아파트 사전점검 서비스 안내 및 상담 신청</li>
+        <li>점검 실적 및 고객후기 정보 제공</li>
+        <li>입주예정 단지 정보 제공</li>
+      </ul>
+
+      <h4>제3조 (상담 신청)</h4>
+      <p>이용자가 상담 신청 시 입력한 개인정보(이름, 연락처 등)는 상담 목적으로만 사용되며, 개인정보처리방침에 따라 관리됩니다. 허위 정보 입력 시 서비스 이용이 제한될 수 있습니다.</p>
+
+      <h4>제4조 (지식재산권)</h4>
+      <p>웹사이트 내 모든 콘텐츠(텍스트, 이미지, 영상 등)의 저작권은 회사에 귀속됩니다. 이용자는 회사의 사전 동의 없이 콘텐츠를 복제, 배포, 상업적으로 이용할 수 없습니다.</p>
+
+      <h4>제5조 (면책사항)</h4>
+      <p>회사는 천재지변, 서버 장애 등 불가항력적 사유로 인한 서비스 중단에 대해 책임을 지지 않습니다. 또한 이용자가 게시한 정보의 신뢰성·정확성에 대해 책임을 지지 않습니다.</p>
+
+      <h4>제6조 (약관 변경)</h4>
+      <p>회사는 약관을 변경할 수 있으며, 변경 시 웹사이트에 7일 전 공지합니다. 변경 후 계속 이용 시 변경 약관에 동의한 것으로 간주합니다.</p>
+
+      <h4>제7조 (준거법 및 관할)</h4>
+      <p>본 약관은 대한민국 법령에 따라 해석되며, 분쟁 발생 시 회사 소재지 관할 법원을 전속 관할로 합니다.</p>
+
+      <h4>문의</h4>
+      <p>이용약관에 관한 문의는 <strong>info@zerohaja.com</strong> 으로 연락해 주세요.</p>
+    </div>
+  </div>
+</div>
+
+<!-- 쿠키 정책 모달 -->
+<div class="cookie-modal-overlay" id="cookieModal" onclick="closeCookieModal(event)">
+  <div class="cookie-modal">
+    <div class="cookie-modal-header">
+      <h3>쿠키 정책</h3>
+      <button class="cookie-modal-close" onclick="closeCookieModal()">&times;</button>
+    </div>
+    <div class="cookie-modal-body">
+      <p class="cookie-updated">최종 업데이트: 2025년 1월</p>
+
+      <h4>쿠키란?</h4>
+      <p>쿠키는 웹사이트 방문 시 브라우저에 저장되는 작은 텍스트 파일입니다. 사이트 이용 편의를 높이고 서비스 품질 개선에 활용됩니다.</p>
+
+      <h4>사용하는 쿠키</h4>
+      <table class="cookie-table">
+        <thead>
+          <tr><th>종류</th><th>제공자</th><th>목적</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>필수 쿠키</td><td>zerohaja.co.kr</td><td>사이트 정상 작동에 필요한 세션 유지</td></tr>
+          <tr><td>지도 쿠키</td><td>Google Maps</td><td>오시는 길 지도 표시 (google.com)</td></tr>
+          <tr><td>폼 쿠키</td><td>FormSubmit</td><td>상담 신청 폼 처리 (formsubmit.co)</td></tr>
+        </tbody>
+      </table>
+
+      <h4>쿠키 관리 방법</h4>
+      <p>브라우저 설정에서 쿠키를 차단하거나 삭제할 수 있습니다. 단, 필수 쿠키를 차단하면 일부 기능이 정상 작동하지 않을 수 있습니다.</p>
+      <ul>
+        <li>Chrome: 설정 → 개인정보 및 보안 → 쿠키 및 기타 사이트 데이터</li>
+        <li>Safari: 환경설정 → 개인 정보 보호 → 쿠키 관리</li>
+        <li>Edge: 설정 → 쿠키 및 사이트 권한</li>
+      </ul>
+
+      <h4>문의</h4>
+      <p>쿠키 정책에 관한 문의는 <strong>info@zerohaja.com</strong> 으로 연락해 주세요.</p>
+    </div>
+  </div>
+</div>
+
 <!-- ========================================
      JavaScript
      ======================================== -->
 <script src="data/apartments.js"></script>
+<script src="data/complexes.js"></script>
 <script>
 /* ─── 헤더 스크롤 효과 ─── */
 const header = document.getElementById('header');
@@ -2796,10 +4792,17 @@ function navigateTo(page) {
   // 네비게이션 링크 active 상태
   document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
   document.querySelectorAll('.nav-link').forEach(link => {
-    if (link.textContent.trim() === '메인' && page === 'main') link.classList.add('active');
+    if (link.textContent.trim() === '제로하자' && page === 'main') link.classList.add('active');
     if (link.textContent.trim() === '사전점검' && page === 'inspection') link.classList.add('active');
     if (link.textContent.trim() === '고객지원' && page === 'support') link.classList.add('active');
+    if (link.textContent.trim() === '고객후기' && page === 'reviews') link.classList.add('active');
   });
+
+
+  // 모바일 탭바 active
+  document.querySelectorAll('.mob-tab').forEach(t => t.classList.remove('active'));
+  const activeTab = document.getElementById('tab-' + page);
+  if (activeTab) activeTab.classList.add('active');
 
   // 스크롤 맨 위로
   window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -2811,6 +4814,11 @@ function navigateTo(page) {
     if (window.scrollY <= 50) {
       header.classList.remove('scrolled');
     }
+  }
+
+  // 문의현황 페이지 진입 시 테이블 생성
+  if (page === 'inquiry') {
+    setTimeout(buildInquiryPage, 50);
   }
 
   // fade-in 요소 재관찰
@@ -2878,6 +4886,42 @@ function animateCountUp() {
   counters.forEach(c => counterObserver.observe(c));
 }
 
+/* ─── 하자 갤러리 스왑 ─── */
+(function() {
+  document.querySelectorAll('.defect-group').forEach(group => {
+    group.addEventListener('click', function(e) {
+      const photo = e.target.closest('.defect-photo');
+      if (!photo || photo.classList.contains('featured')) return;
+
+      const featured = group.querySelector('.defect-photo.featured');
+      const featuredImg = featured.querySelector('img');
+      const clickedImg = photo.querySelector('img');
+      const featuredLabel = featured.querySelector('.defect-photo-label');
+      const clickedLabel = photo.querySelector('.defect-photo-label');
+
+      // 페이드 아웃
+      featuredImg.style.opacity = '0';
+      clickedImg.style.opacity = '0';
+
+      setTimeout(() => {
+        // src / alt 스왑
+        const tmpSrc = featuredImg.src, tmpAlt = featuredImg.alt;
+        featuredImg.src = clickedImg.src; featuredImg.alt = clickedImg.alt;
+        clickedImg.src = tmpSrc; clickedImg.alt = tmpAlt;
+
+        // 라벨 스왑
+        const tmpLabel = featuredLabel.textContent;
+        featuredLabel.textContent = clickedLabel.textContent;
+        clickedLabel.textContent = tmpLabel;
+
+        // 페이드 인
+        featuredImg.style.opacity = '1';
+        clickedImg.style.opacity = '1';
+      }, 180);
+    });
+  });
+})();
+
 /* ─── 탭 UI ─── */
 function switchTab(event, tabId) {
   // 같은 탭 그룹의 버튼과 콘텐츠 찾기
@@ -2893,18 +4937,19 @@ function switchTab(event, tabId) {
 
 /* ─── 점검 실적 필터 ─── */
 let currentFilter = '전체';
-let showCount = 12;
+const isMobile = () => window.innerWidth <= 768;
+let showCount = isMobile() ? 6 : 12;
 
 function filterResults(btn, region) {
   currentFilter = region;
-  showCount = 12;
+  showCount = isMobile() ? 6 : 12;
   document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
   renderResults();
 }
 
 function showMoreResults() {
-  showCount += 12;
+  showCount += isMobile() ? 6 : 12;
   renderResults();
 }
 
@@ -2938,12 +4983,29 @@ function renderResults() {
   }
 }
 
+function renderInspResults() {
+  const el = document.getElementById('inspResultsGrid');
+  if (!el) return;
+  el.innerHTML = APARTMENTS.slice(0, 6).map(a => `
+    <div class="result-card" data-region="${a.region}">
+      <div class="result-card-img">
+        <img src="images/${a.image}" alt="${a.name}" loading="lazy">
+        <div class="result-card-overlay"></div>
+        <span class="result-region-badge">${a.regionLabel}</span>
+      </div>
+      <div class="result-card-body">
+        <p class="result-card-name">${a.name}</p>
+        <div class="result-card-meta">
+          <span class="result-card-date">${a.date}</span>
+          <span class="result-units-badge">점검세대 ${a.units}세대</span>
+        </div>
+      </div>
+    </div>`).join('');
+}
+
 function updateFilterCounts() {
-  const counts = { '전체': APARTMENTS.length };
-  APARTMENTS.forEach(a => { counts[a.region] = (counts[a.region] || 0) + 1; });
   document.querySelectorAll('#resultsFilter .filter-btn').forEach(btn => {
-    const n = counts[btn.dataset.region] || 0;
-    btn.innerHTML = `${btn.dataset.region} <span style="opacity:.6;font-weight:400;">${n}</span>`;
+    btn.textContent = btn.dataset.region;
   });
 }
 
@@ -3000,9 +5062,44 @@ function handleFormSubmit(event) {
   }
 
   if (valid) {
-    showToast('상담 신청이 완료되었습니다. 빠른 시일 내에 연락드리겠습니다.');
-    event.target.reset();
+    const btn = event.target.querySelector('.btn-submit');
+    btn.disabled = true;
+    btn.textContent = '전송 중...';
+
+    const formData = new FormData(event.target);
+    fetch('https://formsubmit.co/ajax/geman22@naver.com', {
+      method: 'POST',
+      headers: { 'Accept': 'application/json' },
+      body: formData,
+    })
+    .then(res => res.json())
+    .then(() => {
+      event.target.reset();
+      btn.disabled = false;
+      btn.textContent = '무료 상담 신청하기';
+      openSubmitModal();
+      fetch('/track-convert', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ sessionId: typeof sessionId !== 'undefined' ? sessionId : '' }),
+        keepalive: true,
+      }).catch(() => {});
+    })
+    .catch(() => {
+      btn.disabled = false;
+      btn.textContent = '무료 상담 신청하기';
+      showToast('전송 중 오류가 발생했습니다. 잠시 후 다시 시도해주세요.');
+    });
   }
+}
+
+function openSubmitModal() {
+  document.getElementById('submitModal').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeSubmitModal() {
+  document.getElementById('submitModal').classList.remove('active');
+  document.body.style.overflow = '';
 }
 
 /* ─── 토스트 알림 ─── */
@@ -3011,6 +5108,91 @@ function showToast(message) {
   toast.textContent = message;
   toast.classList.add('show');
   setTimeout(() => toast.classList.remove('show'), 3500);
+}
+
+/* ─── 모바일 플로팅 상담 모달 ─── */
+function openFloatConsult() {
+  document.getElementById('floatConsultModal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeFloatConsult() {
+  document.getElementById('floatConsultModal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.getElementById('floatConsultModal').addEventListener('click', function(e) {
+  if (e.target === this) closeFloatConsult();
+});
+function handleFloatConsultSubmit(e) {
+  e.preventDefault();
+  const form = document.getElementById('floatConsultForm');
+  const phone = document.getElementById('floatPhone').value.replace(/\s/g, '');
+  const phoneRegex = /^01[016789]-?\d{3,4}-?\d{4}$/;
+  if (!phoneRegex.test(phone)) {
+    showToast('올바른 연락처를 입력해주세요.');
+    return;
+  }
+  const btn = document.getElementById('floatSubmitBtn');
+  btn.disabled = true;
+  btn.textContent = '전송 중...';
+
+  const formData = new FormData(form);
+  fetch('https://formsubmit.co/ajax/geman22@naver.com', {
+    method: 'POST',
+    headers: { 'Accept': 'application/json' },
+    body: formData,
+  })
+  .then(res => res.json())
+  .then(() => {
+    form.reset();
+    btn.disabled = false;
+    btn.textContent = '상담 신청하기';
+    closeFloatConsult();
+    openSubmitModal();
+    fetch('/track-convert', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ sessionId: typeof sessionId !== 'undefined' ? sessionId : '' }),
+      keepalive: true,
+    }).catch(() => {});
+  })
+  .catch(() => {
+    btn.disabled = false;
+    btn.textContent = '상담 신청하기';
+    showToast('전송 중 오류가 발생했습니다. 잠시 후 다시 시도해주세요.');
+  });
+}
+
+/* ─── 개인정보처리방침 모달 ─── */
+function openPrivacyModal() {
+  document.getElementById('privacyModal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closePrivacyModal(e) {
+  if (e && e.target !== document.getElementById('privacyModal')) return;
+  document.getElementById('privacyModal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+/* ─── 이용약관 모달 ─── */
+function openTermsModal() {
+  document.getElementById('termsModal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeTermsModal(e) {
+  if (e && e.target !== document.getElementById('termsModal')) return;
+  document.getElementById('termsModal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+/* ─── 쿠키 정책 모달 ─── */
+function openCookieModal() {
+  document.getElementById('cookieModal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeCookieModal(e) {
+  if (e && e.target !== document.getElementById('cookieModal')) return;
+  document.getElementById('cookieModal').classList.remove('open');
+  document.body.style.overflow = '';
 }
 
 /* ─── 페이지별 헤더 상태 관리 ─── */
@@ -3025,13 +5207,324 @@ function updateHeaderForPage() {
 document.addEventListener('DOMContentLoaded', () => {
   updateFilterCounts();
   renderResults();
+  renderInspResults();
   observeAll();
   animateCountUp();
   updateHeaderForPage();
 
+  // 단지명 자동완성
+  (function() {
+    const input = document.getElementById('formApart');
+    const suggest = document.getElementById('apartSuggest');
+    if (!input || !suggest) return;
+
+    function showSuggestions(query) {
+      const q = query.trim();
+      if (!q) { suggest.style.display = 'none'; return; }
+      const region = document.getElementById('formRegion')?.value || '';
+      const matches = COMPLEXES.filter(a => a.name.includes(q) && (!region || a.region === region)).slice(0, 8);
+      if (!matches.length) { suggest.style.display = 'none'; return; }
+      suggest.innerHTML = matches.map(a => `
+        <div class="apart-suggest-item" style="padding:12px 16px;cursor:pointer;font-size:14px;color:#1A1A1A;border-bottom:1px solid #f0ede8;display:flex;justify-content:space-between;align-items:center;">
+          <span>${a.name}</span>
+          <span style="font-size:12px;color:#888;">${a.region} · ${a.moveIn}</span>
+        </div>`).join('');
+      suggest.style.display = 'block';
+      suggest.querySelectorAll('.apart-suggest-item').forEach((el, i) => {
+        el.addEventListener('mousedown', () => {
+          input.value = matches[i].name;
+          suggest.style.display = 'none';
+        });
+        el.addEventListener('mouseover', () => el.style.background = '#faf8f3');
+        el.addEventListener('mouseout', () => el.style.background = '');
+      });
+    }
+
+    input.addEventListener('input', () => showSuggestions(input.value));
+    input.addEventListener('focus', () => showSuggestions(input.value));
+    document.addEventListener('click', e => {
+      if (!input.contains(e.target) && !suggest.contains(e.target)) suggest.style.display = 'none';
+    });
+  })();
+
   // 스크롤 시 헤더 상태 관리
   window.addEventListener('scroll', updateHeaderForPage);
+
+  // guide 슬라이드쇼
+  (function() {
+    const slides = document.querySelectorAll('#guideSlideshow .slide');
+    if (!slides.length) return;
+    let current = 0;
+    setInterval(function() {
+      slides[current].classList.remove('active');
+      current = (current + 1) % slides.length;
+      slides[current].classList.add('active');
+    }, 3500);
+  })();
+
+  // 보고서 슬라이드쇼 (책장 넘기기)
+  (function() {
+    const cover = document.getElementById('reportBookCover');
+    if (!cover) return;
+    const slides = Array.from(cover.querySelectorAll('.book-slide'));
+    if (slides.length < 2) return;
+    let idx = 0;
+
+    setInterval(function() {
+      const cur = slides[idx];
+      const nxt = slides[(idx + 1) % slides.length];
+
+      // 현재 슬라이드 왼쪽으로 접히며 사라짐
+      cur.style.transition = 'transform 0.35s ease-in, opacity 0.25s ease-in';
+      cur.style.transform = 'rotateY(-90deg)';
+      cur.style.opacity = '0';
+
+      setTimeout(function() {
+        cur.style.display = 'none';
+        cur.style.transform = '';
+        cur.style.opacity = '';
+        cur.style.transition = '';
+        cur.classList.remove('active');
+
+        // 다음 슬라이드 오른쪽에서 펼쳐지며 등장
+        nxt.style.transform = 'rotateY(90deg)';
+        nxt.style.opacity = '0';
+        nxt.style.transition = 'none';
+        nxt.style.display = 'block';
+        nxt.classList.add('active');
+
+        nxt.getBoundingClientRect(); // reflow 강제
+
+        nxt.style.transition = 'transform 0.35s ease-out, opacity 0.25s ease-out';
+        nxt.style.transform = 'rotateY(0deg)';
+        nxt.style.opacity = '1';
+
+        setTimeout(function() {
+          nxt.style.transform = '';
+          nxt.style.opacity = '';
+          nxt.style.transition = '';
+          idx = (idx + 1) % slides.length;
+        }, 360);
+      }, 350);
+    }, 3000);
+  })();
 });
+</script>
+
+<script>
+/* ─── 방문자 수집 ─── */
+(function() {
+  var PAGE_NAMES = { main:'홈', inspection:'사전점검', support:'고객지원', reviews:'고객후기', inquiry:'상담신청' };
+  var sessionId = Math.random().toString(36).slice(2) + Math.random().toString(36).slice(2);
+  var startTime = Date.now();
+  var pageHistory = [PAGE_NAMES['main'] || '홈'];
+  var ended = false;
+
+  (window.requestIdleCallback || function(cb) { setTimeout(cb, 200); })(function() {
+    try {
+      fetch('/track', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          sessionId: sessionId,
+          resolution: screen.width + 'x' + screen.height,
+          referrer: document.referrer || '-',
+        }),
+        keepalive: true,
+      });
+    } catch(e) {}
+  }, { timeout: 2000 });
+
+  // navigateTo 후킹
+  var _origNavigateTo = window.navigateTo;
+  window.navigateTo = function(page) {
+    var name = PAGE_NAMES[page] || page;
+    if (pageHistory[pageHistory.length - 1] !== name) pageHistory.push(name);
+    if (_origNavigateTo) _origNavigateTo.apply(this, arguments);
+  };
+
+  function sendEnd() {
+    if (ended) return;
+    ended = true;
+    var duration = Math.round((Date.now() - startTime) / 1000);
+    var payload = JSON.stringify({ sessionId: sessionId, duration: duration, pages: pageHistory });
+    try {
+      navigator.sendBeacon('/track-end', new Blob([payload], { type: 'application/json' }));
+    } catch(e) {
+      try { fetch('/track-end', { method:'POST', headers:{'Content-Type':'application/json'}, body: payload, keepalive: true }); } catch(e2) {}
+    }
+  }
+
+  document.addEventListener('visibilitychange', function() {
+    if (document.visibilityState === 'hidden') sendEnd();
+  });
+  window.addEventListener('pagehide', sendEnd);
+})();
+</script>
+
+<script>
+/* ─── 문의현황 페이지 ─── */
+function buildInquiryPage() {
+  var tbody = document.getElementById('inquiry-tbody');
+  if (!tbody || typeof COMPLEXES === 'undefined' || !COMPLEXES.length) return;
+
+  var SURNAMES = ['김','이','박','최','정','강','조','윤','장','임','한','오','서','신','권','황','안','송','류','전'];
+  var SERVICES = ['사전점검'];
+  var STATUSES = [
+    { label:'예약완료', cls:'inq-reserved', w:4 },
+    { label:'상담완료', cls:'inq-consulted', w:4 },
+    { label:'상담신청', cls:'inq-applied',   w:2 },
+  ];
+
+  function pickWeighted(arr) {
+    var total = arr.reduce(function(s,i){ return s+i.w; }, 0);
+    var r = Math.random() * total;
+    for (var i=0; i<arr.length; i++) { r -= arr[i].w; if (r<=0) return arr[i]; }
+    return arr[arr.length-1];
+  }
+
+  function fmtDate(d) {
+    var y = String(d.getFullYear()).slice(2);
+    var m = String(d.getMonth()+1).padStart(2,'0');
+    var dd = String(d.getDate()).padStart(2,'0');
+    return y+'-'+m+'-'+dd;
+  }
+
+  function maskApt(name) { return name; }
+
+  var EXCLUDE_KW = ['공공','신축','가로주택','행복주택','리츠','임대','청년','사업','사전청약'];
+  var today = new Date();
+
+  var startDate = new Date(today.getFullYear(), today.getMonth() + 2, 1);      // +2개월 시작
+  var endDate   = new Date(today.getFullYear(), today.getMonth() + 5, 0);      // +4개월 말일
+
+  var pool = COMPLEXES.filter(function(c) {
+    if (!c.units || c.units < 300) return false;
+    if (EXCLUDE_KW.some(function(kw){ return c.name.indexOf(kw) !== -1; })) return false;
+    if (!c.moveIn || c.moveIn.length < 6) return false;
+    var mi = new Date(parseInt(c.moveIn.slice(0,4)), parseInt(c.moveIn.slice(4,6))-1, 1);
+    return mi >= startDate && mi <= endDate;
+  });
+  if (!pool.length) pool = COMPLEXES; // 필터 결과 없으면 전체 사용
+
+  var CC_REGIONS = ['충남','충북','대전'];
+  var poolCC  = pool.filter(function(c){ return CC_REGIONS.indexOf(c.region) !== -1; });
+  var poolEtc = pool.filter(function(c){ return CC_REGIONS.indexOf(c.region) === -1; });
+  if (!poolCC.length)  poolCC  = pool;
+  if (!poolEtc.length) poolEtc = pool;
+
+  var BASE = 3240;
+  var rows = [];
+
+  for (var day=0; day<90; day++) {
+    var d = new Date(today);
+    d.setDate(d.getDate() - day);
+    var cnt = Math.floor(Math.random()*5)+2;
+    for (var j=0; j<cnt; j++) {
+      var apt = (Math.random() < 0.7)
+        ? poolCC[Math.floor(Math.random()*poolCC.length)]
+        : poolEtc[Math.floor(Math.random()*poolEtc.length)];
+      var sur = SURNAMES[Math.floor(Math.random()*SURNAMES.length)];
+      var st  = pickWeighted(STATUSES);
+      rows.push({
+        apt:  maskApt(apt.name),
+        svc:  SERVICES[Math.floor(Math.random()*SERVICES.length)],
+        name: sur+'**',
+        date: fmtDate(d),
+        st:   st,
+      });
+    }
+  }
+
+  // 번호 부여 (최신=높은 번호)
+  var total = BASE + rows.length;
+  rows.forEach(function(r, i){ r.no = total - i; });
+
+  var PER_PAGE = 20;
+  var curPage  = 1;
+  var totalPages = Math.ceil(rows.length / PER_PAGE);
+
+  function renderPage(page) {
+    curPage = page;
+    var start = (page - 1) * PER_PAGE;
+    var slice = rows.slice(start, start + PER_PAGE);
+
+    tbody.innerHTML = slice.map(function(r){
+      return '<tr>'
+        +'<td>'+r.no+'</td>'
+        +'<td>'+r.svc+'</td>'
+        +'<td class="col-apt">'+r.apt+'</td>'
+        +'<td>'+r.name+'</td>'
+        +'<td>'+r.date+'</td>'
+        +'<td><span class="inq-badge '+r.st.cls+'">'+r.st.label+'</span></td>'
+        +'</tr>';
+    }).join('');
+
+    // 페이지네이션 렌더
+    var pg = document.getElementById('inquiry-pagination');
+    if (!pg) return;
+    var btns = '';
+    btns += '<button '+(page===1?'disabled':'')+' onclick="inqGoPage('+page+'-1)">&#8249;</button>';
+    // 최대 7개 페이지 번호 표시
+    var range = pageRange(page, totalPages, 7);
+    range.forEach(function(p){
+      if (p === '...') { btns += '<button disabled>…</button>'; }
+      else { btns += '<button class="'+(p===page?'active':'')+'" onclick="inqGoPage('+p+')">'+p+'</button>'; }
+    });
+    btns += '<button '+(page===totalPages?'disabled':'')+' onclick="inqGoPage('+page+'+1)">&#8250;</button>';
+    pg.innerHTML = btns;
+  }
+
+  function pageRange(cur, total, show) {
+    if (total <= show) {
+      var r = []; for (var i=1;i<=total;i++) r.push(i); return r;
+    }
+    var half = Math.floor(show/2);
+    var start = Math.max(1, cur-half);
+    var end   = Math.min(total, start+show-1);
+    if (end-start < show-1) start = Math.max(1, end-show+1);
+    var res = [];
+    if (start > 1)     { res.push(1); if (start>2) res.push('...'); }
+    for (var i=start;i<=end;i++) res.push(i);
+    if (end < total)   { if (end<total-1) res.push('...'); res.push(total); }
+    return res;
+  }
+
+  window.inqGoPage = function(p) {
+    p = parseInt(p);
+    if (p < 1 || p > totalPages) return;
+    renderPage(p);
+    var section = document.querySelector('#page-inquiry .inquiry-list-section');
+    if (section) section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
+
+  renderPage(1);
+
+  // 통계 카운터
+  var applied   = total;
+  var consulted = Math.floor(total * 0.94);
+  var reserved  = Math.floor(total * 0.86);
+  animateInqCount('stat-applied',   applied);
+  animateInqCount('stat-consulted', consulted);
+  animateInqCount('stat-reserved',  reserved);
+}
+
+function animateInqCount(id, target) {
+  var el = document.getElementById(id);
+  if (!el) return;
+  var unit = el.querySelector('.unit');
+  var duration = 1400;
+  var start = Date.now();
+  function tick() {
+    var elapsed = Date.now() - start;
+    var p = Math.min(elapsed/duration, 1);
+    var ease = 1 - Math.pow(1-p, 3);
+    var val = Math.floor(ease * target);
+    el.firstChild.textContent = val.toLocaleString();
+    if (p < 1) requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+}
 </script>
 
 </body>
